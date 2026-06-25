@@ -1,4 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/gill-sans/Gill Sans.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/gill-sans/Gill Sans Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/gill-sans/Gill Sans Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gill Sans';
+  src: url('/fonts/gill-sans/Gill Sans Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/cormorant-garamond/CormorantGaramond-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant Garamond';
+  src: url('/fonts/cormorant-garamond/CormorantGaramond-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('/fonts/playfair-display/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 @tailwind base;
 @tailwind components;
@@ -7,71 +61,71 @@
 /* *=========== Default theme =========== */
 @layer base {
   :root {
-    --background: theme('colors.white');
-    --foreground: theme('colors.sky.700');
+    --background: #ffffff;
+    --foreground: #000000;
 
-    --card: theme('colors.white');
-    --card-foreground: theme('colors.slate.900');
+    --card: #ffffff;
+    --card-foreground: #000000;
 
-    --popover: theme('colors.white');
-    --popover-foreground: theme('colors.slate.900');
+    --popover: #ffffff;
+    --popover-foreground: #000000;
 
-    --primary: theme('colors.sky.700');
-    --primary-foreground: theme('colors.white');
+    --primary: #ff2c56;
+    --primary-foreground: #ffffff;
 
-    --secondary: theme('colors.gray.200');
-    --secondary-foreground: theme('colors.slate.900');
+    --secondary: #f49ca3;
+    --secondary-foreground: #000000;
 
-    --muted: theme('colors.gray.100');
-    --muted-foreground: theme('colors.slate.600');
+    --muted: #f4bea3;
+    --muted-foreground: #000000;
 
-    --accent: theme('colors.slate.500');
-    --accent-foreground: theme('colors.slate.50');
+    --accent: #85bfd6;
+    --accent-foreground: #000000;
 
-    --highlight: theme('colors.yellow.500');
-    --highlight-foreground: theme('colors.yellow.600');
+    --highlight: #e2cf5d;
+    --highlight-foreground: #000000;
 
-    --destructive: theme('colors.red.600');
-    --destructive-foreground: theme('colors.white');
+    --destructive: #ff2c56;
+    --destructive-foreground: #ffffff;
 
-    --border: theme('colors.slate.300');
-    --input: theme('colors.slate.400');
-    --ring: theme('colors.slate.600');
+    --border: #bbefe0;
+    --input: #bbefe0;
+    --ring: #ff2c56;
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: theme('colors.gray.900');
-    --foreground: theme('colors.white');
+    --background: #000000;
+    --foreground: #ffffff;
 
-    --card: theme('colors.gray.800');
-    --card-foreground: theme('colors.white');
+    --card: #000000;
+    --card-foreground: #ffffff;
 
-    --popover: theme('colors.gray.800');
-    --popover-foreground: theme('colors.white');
+    --popover: #000000;
+    --popover-foreground: #ffffff;
 
-    --primary: theme('colors.slate.200');
-    --primary-foreground: theme('colors.slate.900');
+    --primary: #ff2c56;
+    --primary-foreground: #ffffff;
 
-    --secondary: theme('colors.gray.700');
-    --secondary-foreground: theme('colors.white');
+    --secondary: #85bfd6;
+    --secondary-foreground: #000000;
 
-    --muted: theme('colors.gray.700');
-    --muted-foreground: theme('colors.gray.300');
+    --muted: #bbefe0;
+    --muted-foreground: #000000;
 
-    --accent: theme('colors.gray.300');
-    --accent-foreground: theme('colors.gray.950');
+    --accent: #e2cf5d;
+    --accent-foreground: #000000;
 
-    --highlight: theme('colors.yellow.400');
-    --highlight-foreground: theme('colors.yellow.500');
+    --highlight: #f4bea3;
+    --highlight-foreground: #000000;
 
-    --destructive: theme('colors.red.400');
-    --destructive-foreground: theme('colors.gray.900');
+    --destructive: #ff2c56;
+    --destructive-foreground: #ffffff;
 
-    --border: theme('colors.gray.700');
-    --input: theme('colors.gray.700');
-    --ring: theme('colors.gray.400');
+    --border: #f49ca3;
+    --input: #f49ca3;
+    --ring: #ff2c56;
   }
 }
 
@@ -86,6 +140,6 @@
     @apply inline-block;
   }
   .rdp-day_today {
-    @apply bg-blue-500 text-white font-bold rounded-full;
+    @apply bg-primary text-primary-foreground font-bold rounded-full;
   }
 }

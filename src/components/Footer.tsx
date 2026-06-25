@@ -1,176 +1,95 @@
-import { LogoIcon } from "./Icons";
+interface FooterLink {
+  label: string;
+  href: string;
+}
+
+interface FooterSection {
+  title: string;
+  links: FooterLink[];
+}
+
+const footerSections: FooterSection[] = [
+  {
+    title: "About",
+    links: [
+      { label: "About Sanna Styles", href: "/about" },
+      { label: "Contact Us!", href: "/contact" },
+      { label: "Nail Gallery", href: "/nail-gallery" },
+      { label: "Policies", href: "/policies" },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      { label: "All Services", href: "/services" },
+      { label: "Large Parties & Events", href: "/book-a-large-party-today" },
+      { label: "The Luxe Night Market", href: "/the-luxe-night-market-by-sanna-styles" },
+    ],
+  },
+  {
+    title: "For Nail Techs",
+    links: [
+      { label: "Careers", href: "/careers" },
+      { label: "Trainings", href: "/for-nail-technicians" },
+      { label: "Rentals", href: "/mobile-salon-rent" },
+    ],
+  },
+];
 
 export const Footer = () => {
   return (
     <footer id="footer" className="mt-20 border-t bg-background">
-
-      <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
-        <div className="col-span-full xl:col-span-2">
-          <a
-            rel="noreferrer noopener"
-            href="/"
-            className="font-bold text-xl flex"
-          >
-            <LogoIcon />
-            ShadcnUI/React
-          </a>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow US</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Github
+      <section className="container py-16">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_2fr] lg:gap-12">
+          <div className="max-w-md justify-self-start md:col-start-1 md:row-start-1 lg:justify-self-center lg:row-span-2">
+            <a rel="noreferrer noopener" href="/" className="inline-flex w-full justify-start lg:justify-center">
+              <img
+                src="/branding/pink-stacked.png"
+                alt="Sanna Styles Mobile Salon"
+                className="h-44 w-auto"
+              />
             </a>
           </div>
 
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitter
-            </a>
-          </div>
-        </div>
+          <p className="max-w-3xl text-sm leading-6 text-muted-foreground md:col-start-2 md:row-start-1 md:justify-self-center md:self-center md:text-center lg:justify-self-start lg:text-left">
+            Utah's premier mobile nail salon, bringing professional manicures, pedicures, parties, and more directly to you!
+          </p>
 
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Platforms</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Web
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Mobile
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Desktop
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">About</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Features
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Pricing
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              FAQ
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="/privacy"
-              className="opacity-60 hover:opacity-100"
-            >
-              Privacy
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="/terms"
-              className="opacity-60 hover:opacity-100"
-            >
-              Terms
-            </a>
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Community</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Youtube
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Discord
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitch
-            </a>
+          <div className="grid gap-8 sm:grid-cols-2 md:col-span-2 md:grid-cols-3 lg:col-span-1 lg:col-start-2 lg:grid-cols-3">
+            {footerSections.map((section) => (
+              <div key={section.title} className="flex flex-col gap-2">
+                <h3 className="font-semibold text-primary">{section.title}</h3>
+                {section.links.map((link) => (
+                  <a
+                    key={link.label}
+                    rel="noreferrer noopener"
+                    href={link.href}
+                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
+                  >
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="container pb-14 text-center">
-        <h3>
-          &copy; 2025 Landing page made by{" "}
-          <a
-            rel="noreferrer noopener"
-            target="_blank"
-            href="https://www.linkedin.com/in/schotttaylor/"
-            className="text-primary transition-all border-primary hover:border-b-2"
-          >
-            Schott Taylor
-          </a>
-        </h3>
+      <section className="border-t bg-primary">
+        <div className="container flex flex-col items-start justify-between gap-3 py-6 text-sm md:flex-row md:items-center md:justify-between">
+          <p className="text-white">
+            &copy; 2026 <span className="text-white">Sanna Styles</span>. All rights reserved.
+          </p>
+          <div className="flex items-center gap-2 text-white">
+            <a rel="noreferrer noopener" href="/privacy" className="hover:text-black">
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a rel="noreferrer noopener" href="/terms" className="hover:text-black">
+              Terms of Use
+            </a>
+          </div>
+        </div>
       </section>
     </footer>
   );

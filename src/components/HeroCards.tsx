@@ -57,7 +57,7 @@ export const HeroCards = () => {
                   key={benefit}
                   className="flex"
                 >
-                  <Check className="text-green-500" />{" "}
+                  <Check className="text-primary" />{" "}
                   <h3 className="ml-2">{benefit}</h3>
                 </span>
               )
@@ -87,8 +87,7 @@ export const HeroCards = () => {
           <div>
             <a
               rel="noreferrer noopener"
-              href="https://github.com/openskysolutions"
-              target="_blank"
+              href="/contact"
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",
@@ -99,8 +98,7 @@ export const HeroCards = () => {
             </a>
             <a
               rel="noreferrer noopener"
-              href="https://twitter.com/schotttaylor"
-              target="_blank"
+              href="/contact"
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",
@@ -120,8 +118,7 @@ export const HeroCards = () => {
 
             <a
               rel="noreferrer noopener"
-              href="https://www.linkedin.com/in/openskysolutions/"
-              target="_blank"
+              href="/contact"
               className={buttonVariants({
                 variant: "ghost",
                 size: "sm",

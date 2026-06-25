@@ -1,440 +1,222 @@
-//Add Home page component
-import React from 'react';
-import { Hero } from '@/components/Hero';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
-  Code2, 
-  Palette, 
-  Shield, 
-  Smartphone, 
-  Database, 
-  Zap, 
-  Layers, 
-  Globe,
-  TestTube,
-  Wrench,
-  Rocket,
-  CheckCircle
-} from 'lucide-react';
+
+const switchingTextOptions = [
+  'Corporate Event',
+  'Anniversary',
+  'Wedding',
+  'Retreat',
+  'Birthday',
+  'Party',
+];
 
 const HomePage: React.FC = () => {
+  const [activeOptionIndex, setActiveOptionIndex] = useState(0);
+  const [typedText, setTypedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentWord = switchingTextOptions[activeOptionIndex];
+    const isWordComplete = typedText === currentWord;
+    const isWordCleared = typedText.length === 0;
+
+    let timeoutMs = isDeleting ? 60 : 110;
+
+    if (!isDeleting && isWordComplete) {
+      timeoutMs = 1200;
+    }
+
+    if (isDeleting && isWordCleared) {
+      timeoutMs = 250;
+    }
+
+    const timeoutId = window.setTimeout(() => {
+      if (!isDeleting && isWordComplete) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isDeleting && isWordCleared) {
+        setIsDeleting(false);
+        setActiveOptionIndex((prev) => (prev + 1) % switchingTextOptions.length);
+        return;
+      }
+
+      setTypedText(currentWord.slice(0, typedText.length + (isDeleting ? -1 : 1)));
+    }, timeoutMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [activeOptionIndex, isDeleting, typedText]);
+
   return (
     <div>
-      <Hero />
-      
-      {/* Tech Stack Section */}
-      <section id="tech-stack" className="pt-36 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Modern Tech Stack</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Built with cutting-edge technologies for performance, scalability, and developer experience
+      <section
+        className="relative bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      >
+        <div className="absolute inset-0 bg-white/70 z-0" aria-hidden="true" />
+        <div className="relative z-[1] container mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12 lg:pb-20">
+          <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
+          <div className="w-full space-y-8 lg:flex-1">
+            <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-6xl">
+              Beautiful Nails, Wherever You Are!
+            </h1>
+
+            <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
+              Utah's premier mobile nail services that bring the salon experience directly to your home, office, or special event.
             </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Code2 className="h-8 w-8 text-blue-500" />
-                  <div>
-                    <CardTitle>React 18 + TypeScript</CardTitle>
-                    <Badge variant="secondary">Frontend</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Modern React with hooks, TypeScript for type safety, and latest features like Suspense and concurrent rendering.
-                </CardDescription>
-              </CardContent>
-            </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Zap className="h-8 w-8 text-yellow-500" />
-                  <div>
-                    <CardTitle>Vite + Hot Reload</CardTitle>
-                    <Badge variant="secondary">Build Tool</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Lightning-fast development with Vite's instant hot module replacement and optimized production builds.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <div className="inline-flex max-w-full flex-col items-start gap-2 rounded-3xl border border-border bg-white px-5 py-3 text-base text-foreground md:text-lg sm:flex-row sm:items-center sm:gap-0 sm:rounded-full">
+              <span>Book our salon services for your upcoming</span>
+              <span className="inline-flex items-center gap-1 sm:mx-1">
+                <span className="inline-flex whitespace-nowrap rounded-full bg-primary px-3 py-1 font-semibold text-white shadow-sm">
+                  <span className="italic tracking-wide">{typedText}</span>
+                  <span className="animate-pulse">|</span>
+                </span>
+                <span>today!</span>
+              </span>
+            </div>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Palette className="h-8 w-8 text-purple-500" />
-                  <div>
-                    <CardTitle>Tailwind + Shadcn/ui</CardTitle>
-                    <Badge variant="secondary">Styling</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Utility-first CSS with beautifully designed, accessible components. Dark/light themes included.
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <div className="grid grid-cols-2 gap-3 pb-1 sm:flex sm:flex-nowrap">
+              <Button asChild className="w-full border-0 bg-[#ff2c56] text-white hover:bg-[#ff2c56]/90 sm:w-auto">
+                <a rel="noreferrer noopener" href="/services">
+                  All Services
+                </a>
+              </Button>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Smartphone className="h-8 w-8 text-green-500" />
-                  <div>
-                    <CardTitle>Capacitor + Electron</CardTitle>
-                    <Badge variant="secondary">Cross-Platform</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Deploy to web, iOS, Android, and desktop from a single codebase. True cross-platform development.
-                </CardDescription>
-              </CardContent>
-            </Card>
+              <Button asChild className="w-full border-0 bg-[#f49ca3] text-black hover:bg-[#f49ca3]/90 sm:w-auto">
+                <a rel="noreferrer noopener" href="/book-a-large-party-today">
+                  Parties & Events
+                </a>
+              </Button>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <Database className="h-8 w-8 text-blue-600" />
-                  <div>
-                    <CardTitle>API Integration</CardTitle>
-                    <Badge variant="secondary">Backend</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Express server with Swagger docs, SQLite database, and GoHighLevel API integration ready to use.
-                </CardDescription>
-              </CardContent>
-            </Card>
+              <Button asChild className="w-full border-0 bg-[#85bfd6] text-black hover:bg-[#85bfd6]/90 sm:w-auto">
+                <a rel="noreferrer noopener" href="/contact">
+                  Contact
+                </a>
+              </Button>
 
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3">
-                  <TestTube className="h-8 w-8 text-red-500" />
-                  <div>
-                    <CardTitle>Testing & Quality</CardTitle>
-                    <Badge variant="secondary">DevOps</Badge>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Vitest for testing, ESLint for code quality, and TypeScript for compile-time error catching.
-                </CardDescription>
-              </CardContent>
-            </Card>
+              <Button asChild className="w-full border-0 bg-[#e2cf5d] text-black hover:bg-[#e2cf5d]/90 sm:w-auto">
+                <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
+                  Book Now!
+                </a>
+              </Button>
+            </div>
+            </div>
+
+            {/* Arched image frame */}
+            <div className="relative z-10 mb-2 mt-0 flex w-full max-w-[21rem] shrink-0 self-center sm:max-w-[23rem] md:mb-4 md:max-w-[25rem] lg:order-last lg:ml-auto lg:mr-6 lg:mb-[-140px] lg:mt-[-60px] lg:w-[30rem] lg:max-w-none xl:w-[34rem]">
+              <div
+                className="relative aspect-[10/11] w-full overflow-hidden shadow-2xl"
+                style={{ borderRadius: '50% 50% 0 0 / 50% 50% 0 0' }}
+              >
+                <img
+                  src="/images/sanna/pink-glitter-nail.png"
+                  alt="Nail salon service"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ transform: 'scaleX(-1)' }}
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* UI Components Section */}
-      <section id="ui-components" className="pt-36 bg-muted/50">
+      <section aria-label="Live Colorfully" className="w-full">
+        <img
+          src="/images/stock/live-colorfully.png"
+          alt="Colorful nail design showcase"
+          className="w-full h-auto"
+        />
+      </section>
+
+      <section className="bg-background pt-16 pb-8 md:pt-20 md:pb-10">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Comprehensive UI System</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Pre-built components with accessibility, animations, and responsive design
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-semibold mb-6">What's Included</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Navigation with mobile sheet menu</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Hero sections with animated backgrounds</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Card layouts with pricing components</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Forms with validation and error handling</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Modal dialogs and dropdown menus</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Buttons, badges, and icons library</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500" />
-                  <span>Dark/light theme toggle</span>
-                </div>
+          <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-stretch">
+            <div className="order-1 max-w-3xl text-center lg:order-2 lg:col-start-2 lg:text-left">
+              <h2 className="text-3xl font-bold text-primary md:text-4xl">The Sanna Styles Experience</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Every appointment is designed around your schedule, your location, and your style.
+              </p>
+            </div>
+
+            <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
+              <div
+                className="relative aspect-[10/11] w-full overflow-hidden shadow-2xl lg:h-full lg:aspect-auto"
+                style={{ borderRadius: '50% 50% 0 0 / 50% 50% 0 0' }}
+              >
+                <img
+                  src="/images/stock/doing-nails.jpeg"
+                  alt="Nail service in progress"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ transform: 'scaleX(-1)' }}
+                />
               </div>
             </div>
-            
-            <div className="bg-background rounded-lg p-6 border">
-              <h4 className="font-semibold mb-4">Component Preview</h4>
-              <div className="space-y-4">
-                <div className="flex gap-2">
-                  <Button size="sm">Primary</Button>
-                  <Button variant="secondary" size="sm">Secondary</Button>
-                  <Button variant="outline" size="sm">Outline</Button>
-                </div>
-                <div className="flex gap-2">
-                  <Badge>New</Badge>
-                  <Badge variant="secondary">Popular</Badge>
-                  <Badge variant="outline">Featured</Badge>
-                </div>
-                <Card className="max-w-sm">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Sample Card</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription>
-                      This is how cards look with the current theme.
-                    </CardDescription>
-                  </CardContent>
-                </Card>
+
+            <div className="order-3 lg:col-start-2">
+              <div className="grid items-start gap-8 md:grid-cols-2">
+                <article className="h-fit self-start rounded-3xl border border-border bg-white p-3 shadow-sm">
+                  <h3 className="text-xl font-semibold text-foreground">More Than a Nail Appointment</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    Personalized service that feels effortless, polished, and tailored to exactly what you need.
+                  </p>
+                </article>
+
+                <article className="h-fit self-start rounded-3xl border border-border bg-white p-3 shadow-sm">
+                  <h3 className="text-xl font-semibold text-foreground">Mobile Convenience</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    No traffic. No waiting rooms. Just professional nail services brought directly to your door.
+                  </p>
+                </article>
+
+                <article className="h-fit self-start rounded-3xl border border-border bg-white p-3 shadow-sm">
+                  <h3 className="text-xl font-semibold text-foreground">Events &amp; Group Bookings</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    From bridal parties to private events, we create a luxurious experience your guests will love.
+                  </p>
+                </article>
+
+                <article className="h-fit self-start rounded-3xl border border-border bg-white p-3 shadow-sm">
+                  <h3 className="text-xl font-semibold text-foreground">Personalized Service</h3>
+                  <p className="mt-2 text-muted-foreground">
+                    Every appointment is tailored to your preferences, with one-on-one attention and nail designs that reflect your unique style.
+                  </p>
+                </article>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Features Section */}
-      <section id="features" className="pt-36 bg-background">
+      <section className="bg-muted/40 pt-8 pb-16 md:pt-10 md:pb-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Core Features</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to build modern web applications
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Shield className="h-12 w-12 text-blue-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Authentication</h3>
-              <p className="text-muted-foreground">
-                Complete auth flow with protected routes and user management
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <Globe className="h-12 w-12 text-green-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Responsive</h3>
-              <p className="text-muted-foreground">
-                Mobile-first design that works on all screen sizes
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <Layers className="h-12 w-12 text-purple-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">State Management</h3>
-              <p className="text-muted-foreground">
-                Zustand for simple, scalable state management
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <Wrench className="h-12 w-12 text-orange-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Developer Tools</h3>
-              <p className="text-muted-foreground">
-                Hot reload, TypeScript, ESLint, and debugging tools
-              </p>
-            </div>
+          <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-white p-8 md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Perfect For</p>
+            <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Mobile Nail Services for Every Occasion</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is perfect for:</p>
+
+            <ul className="mt-6 grid list-disc gap-3 pl-6 text-foreground md:grid-cols-2">
+              <li>Busy professionals</li>
+              <li>Stay-at-home moms</li>
+              <li>Brides and bridal parties</li>
+              <li>Birthday celebrations</li>
+              <li>Girls' nights</li>
+              <li>Vacation rentals</li>
+              <li>Seniors who prefer at-home services</li>
+              <li>Anyone who values convenience</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* Architecture Section */}
-      <section id="architecture" className="pt-36 bg-muted/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Scalable Architecture</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Well-organized, maintainable codebase following modern best practices
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Code2 className="h-5 w-5" />
-                    Frontend
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="text-sm text-muted-foreground">
-                    • Component-based architecture
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Custom hooks for logic
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Theme provider system
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Routing with React Router
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Database className="h-5 w-5" />
-                    Backend
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="text-sm text-muted-foreground">
-                    • Express.js server
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • SQLite database
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Swagger API docs
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Authentication middleware
-                  </div>
-                </CardContent>
-              </Card>
-              
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Rocket className="h-5 w-5" />
-                    DevOps
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  <div className="text-sm text-muted-foreground">
-                    • Vite build optimization
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Environment configs
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Git integration
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    • Multi-platform builds
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Deployment Section */}
-      <section id="deployment" className="pt-36 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Multi-Platform Deployment</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Build once, deploy everywhere with our integrated deployment pipeline
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Globe className="h-12 w-12 text-blue-500 mx-auto mb-2" />
-                <CardTitle>Web</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Static site generation with Vite for fast, SEO-friendly websites
-                </CardDescription>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Smartphone className="h-12 w-12 text-green-500 mx-auto mb-2" />
-                <CardTitle>Mobile</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  iOS and Android apps using Capacitor with native performance
-                </CardDescription>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Code2 className="h-12 w-12 text-purple-500 mx-auto mb-2" />
-                <CardTitle>Desktop</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Cross-platform desktop apps with Electron for Windows, Mac, and Linux
-                </CardDescription>
-              </CardContent>
-            </Card>
-            
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <Zap className="h-12 w-12 text-yellow-500 mx-auto mb-2" />
-                <CardTitle>PWA</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Progressive Web App capabilities for offline functionality
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Getting Started Section */}
-      <section id="getting-started" className="pt-36 bg-primary/5">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Clone this repository and start building your next modern web application today
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              View on GitHub
-            </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">
-              Read Documentation
-            </Button>
-          </div>
-          
-          <div className="mt-12 max-w-2xl mx-auto bg-background rounded-lg p-6 border">
-            <h3 className="text-lg font-semibold mb-4">Quick Start</h3>
-            <div className="text-left space-y-2 font-mono text-sm bg-muted rounded p-4">
-              <div>git clone https://github.com/openskysolutions/react-vite-shadcn.git</div>
-              <div>cd react-vite-shadcn</div>
-              <div>npm install</div>
-              <div>npm run dev</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section id="tech-stack" className="pt-36 bg-background" />
+      <section id="ui-components" className="pt-36 bg-muted/50" />
+      <section id="features" className="pt-36 bg-background" />
+      <section id="architecture" className="pt-36 bg-muted/50" />
+      <section id="deployment" className="pt-36 bg-background" />
+      <section id="getting-started" className="pt-36 bg-primary/5" />
     </div>
   );
 }

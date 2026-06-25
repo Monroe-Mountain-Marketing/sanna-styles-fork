@@ -1,8 +1,10 @@
 import { useState } from "react";
 import {
+  NavigationMenuContent,
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
+  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
@@ -13,177 +15,239 @@ import {
 } from "@/components/ui/sheet";
 
 import { Button, buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
-import { ModeToggle } from "./mode-toggle";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "./ui/dropdown-menu";
-import { useNavigate } from "react-router-dom";
-import { useTheme } from "./theme-provider";
-import { Moon, Sun } from "lucide-react";
-import OpenSkyLogoSvg from '@/assets/open-sky-logo-light-h.svg';
-import OpenSkyLogoDarkSvg from '@/assets/open-sky-logo-dark-h.svg';
-import ProfileIcon from '@/assets/profile-icon.png';
+import { Facebook, Instagram, Menu } from "lucide-react";
 import cn from "classnames";
 
-interface RouteProps {
+interface NavLink {
   href: string;
   label: string;
 }
 
-const navSectionItems: RouteProps[] = [
-  { href: "#tech-stack", label: "Tech Stack" },
-  { href: "#ui-components", label: "UI System" },
-  { href: "#features", label: "Core Features" },
-  { href: "#architecture", label: "Architecture" },
-  { href: "#deployment", label: "Deployment" },
-  { href: "#getting-started", label: "Get Started" },
-];
+interface MegaMenuSection {
+  title: string;
+  items: NavLink[];
+}
 
-const routeList: RouteProps[] = [
+const megaMenuSections: MegaMenuSection[] = [
   {
-    href: "/",
-    label: "Home",
+    title: "About",
+    items: [
+      { href: "/about", label: "About Sanna Styles" },
+      { href: "/contact", label: "Contact Us!" },
+      { href: "/nail-gallery", label: "Nail Gallery" },
+      { href: "/policies", label: "Policies" },
+    ],
+  },
+  {
+    title: "Services",
+    items: [
+      { href: "/services", label: "All Services" },
+      { href: "/book-a-large-party-today", label: "Large Parties & Events" },
+      { href: "/the-luxe-night-market-by-sanna-styles", label: "The Luxe Night Market" },
+    ],
+  },
+  {
+    title: "For Nail Techs",
+    items: [
+      { href: "/careers", label: "Careers" },
+      { href: "/for-nail-technicians", label: "Trainings" },
+      { href: "/mobile-salon-rent", label: "Rentals" },
+    ],
   },
 ];
 
+const contactPageHref = "/contact";
+const bookNowHref = "https://www.vagaro.com/sannastyles";
+const businessName = "Sanna Styles Mobile Salon";
+const businessDomain = "/";
+const businessEmail = "contact@sannastyles.com";
+const businessPhone = "(801) 923-3148";
+const facebookHref = "/contact";
+const instagramHref = "/contact";
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const { theme, setTheme } = useTheme();
-  const navigate = useNavigate();
-
-  const isHomePage = location.pathname === "/";
-
-  // Ensure in-page section links scroll instead of routing
-  const handleSectionClick = (href: string, closeSheet?: boolean) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // Only intercept for hash links on the homepage
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const id = href.replace(/^#/, '');
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Fallback: update hash so browser attempts default behavior if element appears later
-        window.location.hash = href;
-      }
-      if (closeSheet) setIsOpen(false);
-    }
-  };
-
-  // Handle logo click - scroll to top on homepage, navigate otherwise
-  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isHomePage) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-    // If not on homepage, allow default navigation to "/"
-  };
 
   return (
-    <header className="sticky border-b-[1px] top-0 z-40 w-full bg-white dark:border-b-slate-700 dark:bg-background">
-      <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-14 px-4 w-screen flex justify-between ">
-          <NavigationMenuItem className="font-bold flex">
+    <header className="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur dark:bg-background/95 dark:border-b-border">
+      <div className="bg-white">
+        <div className="container grid h-20 grid-cols-2 items-center px-4 md:grid-cols-3">
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            rel="noreferrer noopener"
+            href={facebookHref}
+            aria-label="Sanna Styles Facebook"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              "h-9 w-9"
+            )}
+          >
+            <Facebook className="h-4 w-4" />
+          </a>
+          <a
+            rel="noreferrer noopener"
+            href={instagramHref}
+            aria-label="Sanna Styles Instagram"
+            className={cn(
+              buttonVariants({ variant: "ghost", size: "icon" }),
+              "h-9 w-9"
+            )}
+          >
+            <Instagram className="h-4 w-4" />
+          </a>
+        </div>
+
+        <div className="flex justify-start md:justify-center">
+          <a
+            rel="noreferrer noopener"
+            href={businessDomain}
+            className="inline-flex items-center"
+          >
+            <img
+              src="/branding/pink-horizontal.png"
+              alt="Sanna Styles Mobile Salon"
+              className="h-12 w-auto md:h-16"
+            />
+          </a>
+        </div>
+
+        <div className="hidden items-center justify-end gap-2 md:flex">
+          <Button asChild variant="outline" size="sm">
+            <a rel="noreferrer noopener" href={contactPageHref}>
+              Contact Us Today!
+            </a>
+          </Button>
+          <Button asChild size="sm">
+            <a rel="noreferrer noopener" href={bookNowHref} target="_blank">
+              Book Now!
+            </a>
+          </Button>
+        </div>
+
+        <div className="flex items-center justify-end gap-2 md:hidden">
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger className="px-2" aria-label="Open menu">
+              <Menu className="h-5 w-5" />
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[85vw] sm:max-w-md">
+              <SheetHeader>
+                <SheetTitle className="font-semibold">{businessName}</SheetTitle>
+              </SheetHeader>
+
+              <div className="mt-6 space-y-6">
+                {megaMenuSections.map((section) => (
+                  <div key={section.title}>
+                    <h3 className="mb-2 text-sm font-semibold text-primary">{section.title}</h3>
+                    <nav className="flex flex-col gap-1">
+                      {section.items.map((item) => (
+                        <a
+                          key={item.label}
+                          rel="noreferrer noopener"
+                          href={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className={buttonVariants({ variant: "ghost", size: "sm" })}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
+                ))}
+
+                <div className="space-y-2 border-t pt-4">
+                  <Button asChild className="w-full" variant="outline">
+                    <a rel="noreferrer noopener" href={contactPageHref} onClick={() => setIsOpen(false)}>
+                      Contact Us Today!
+                    </a>
+                  </Button>
+                  <Button asChild className="w-full">
+                    <a rel="noreferrer noopener" href={bookNowHref} target="_blank" onClick={() => setIsOpen(false)}>
+                      Book Now!
+                    </a>
+                  </Button>
+                </div>
+
+                <div className="border-t pt-4 text-sm text-muted-foreground">
+                  <p>
+                    <span>{businessEmail}</span>
+                  </p>
+                  <p>
+                    <span>{businessPhone}</span>
+                  </p>
+                  <div className="mt-2 flex gap-4">
+                    <a rel="noreferrer noopener" href={facebookHref} className="hover:text-primary">
+                      Facebook
+                    </a>
+                    <a rel="noreferrer noopener" href={instagramHref} className="hover:text-primary">
+                      Instagram
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
+      </div>
+
+      <NavigationMenu className="mx-auto hidden border-t md:flex">
+        <NavigationMenuList className="container h-14 w-screen justify-center gap-2 px-4">
+          <NavigationMenuItem>
             <a
               rel="noreferrer noopener"
-              href="/"
-              onClick={handleLogoClick}
-              className="ml-2 font-bold text-xl flex items-center cursor-pointer"
+              href={businessDomain}
+              className={buttonVariants({ variant: "ghost" })}
             >
-              <img 
-                src={theme === 'dark' ? OpenSkyLogoDarkSvg : OpenSkyLogoSvg} 
-                alt="Open Sky Solutions Logo" 
-                className='h-10 w-auto mr-3' 
-              />
+              Home
             </a>
           </NavigationMenuItem>
 
-          {/* desktop */}
-          <nav className="hidden md:flex gap-2 flex-grow justify-center items-center">
-            {routeList.map((route: RouteProps, i) => (
-              <a
-                rel="noreferrer noopener"
-                href={route.href}
-                key={i}
-                className={`text-[17px] ${buttonVariants({
-                  variant: "ghost",
-                })}`}
-              >
-                {route.label}
-              </a>
-            ))}
-          </nav>
+          {megaMenuSections.map((section) => (
+            <NavigationMenuItem key={section.title}>
+              <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <div className="grid w-[560px] grid-cols-[1fr_1.2fr] gap-3 p-5">
+                  <div key={section.title}>
+                    <h3 className="mb-2 text-sm font-semibold text-primary">{section.title}</h3>
+                    <nav className="flex flex-col gap-1">
+                      {section.items.map((item) => (
+                        <a
+                          key={item.label}
+                          rel="noreferrer noopener"
+                          href={item.href}
+                          className={cn(
+                            buttonVariants({ variant: "ghost", size: "sm" }),
+                            "justify-start text-left"
+                          )}
+                        >
+                          {item.label}
+                        </a>
+                      ))}
+                    </nav>
+                  </div>
 
-          <div className="flex md:order-2 gap-2 items-center">
-
-            {/* mobile */}
-            <span className="flex md:hidden">
-              <ModeToggle />
-
-              <Sheet
-                open={isOpen}
-                onOpenChange={setIsOpen}
-              >
-                <SheetTrigger className="px-2">
-                  <Menu
-                    className="flex md:hidden h-5 w-5"
-                    onClick={() => setIsOpen(true)}
-                  >
-                    <span className="sr-only">Menu Icon</span>
-                  </Menu>
-                </SheetTrigger>
-
-                <SheetContent side={"left"}>
-                  <SheetHeader>
-                    <SheetTitle className="font-bold text-xl">
-                      Shadcn/React
-                    </SheetTitle>
-                  </SheetHeader>
-                  <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                    {routeList.map(({ href, label }: RouteProps) => (
-                      <a
-                        rel="noreferrer noopener"
-                        key={label}
-                        href={href}
-                        onClick={() => setIsOpen(false)}
-                        className={buttonVariants({ variant: "ghost" })}
-                      >
-                        {label}
+                  <div className="rounded-lg border bg-muted/30 p-4 text-sm">
+                    <p className="font-semibold text-foreground">{businessName}</p>
+                    <p className="mt-1 text-muted-foreground">Mobile nail services across Utah</p>
+                    <div className="mt-3 space-y-1">
+                      <p>{businessEmail}</p>
+                      <p>{businessPhone}</p>
+                    </div>
+                    <div className="mt-3 flex gap-3">
+                      <a rel="noreferrer noopener" href={facebookHref} className="text-primary hover:underline">
+                        Facebook
                       </a>
-                    ))}
-                  </nav>
-                </SheetContent>
-              </Sheet>
-            </span>
-          </div>
-          <div className="hidden md:flex gap-2">
-            <ModeToggle />
-          </div>
+                      <a rel="noreferrer noopener" href={instagramHref} className="text-primary hover:underline">
+                        Instagram
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
-
-      {isHomePage && navSectionItems.length > 0 &&
-        <NavigationMenu className={cn(
-          "hidden md:flex max-w-full w-full border-t border-t-gray-800 shadow-md",
-          "bg-background dark:bg-background brightness-[98%] dark:brightness-[120%]",
-        )}>
-          <NavigationMenuList className="container h-10 px-4 w-screen flex justify-between items-center">
-            {navSectionItems.map(({ href, label }) => (
-              <a
-                key={label}
-                href={href}
-                onClick={handleSectionClick(href)}
-                className={cn(
-                  buttonVariants({ variant: "ghost", size: 'xs' }),
-                  "hover:dark:bg-card hover:bg-secondary hover:text-primary"
-                )}
-              >
-                {label}
-              </a>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-      }
     </header>
   );
 };

@@ -147,7 +147,9 @@ module.exports = {
         '160': '40rem',      // 640px
       },
       fontFamily: {
-        sans: ['Montserrat', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['Gill Sans', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Cormorant Garamond', 'ui-serif', 'Georgia', 'serif'],
+        display: ['Playfair Display', 'ui-serif', 'Georgia', 'serif'],
       },
       width: {
         '1/7': '14.285714%',
