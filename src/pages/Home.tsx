@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const switchingTextOptions = [
   'Corporate Event',
@@ -10,10 +11,38 @@ const switchingTextOptions = [
   'Party',
 ];
 
+const GALLERY_IMAGE_COUNT = 183;
+const SERVICE_SLIDER_IMAGE_COUNT = 16;
+const EXCLUDED_GALLERY_NUMBERS = new Set([57, 167]);
+
+const serviceSliderImages = (() => {
+  const allNumbers = Array.from({ length: GALLERY_IMAGE_COUNT }, (_, index) => index + 1)
+    .filter((number) => !EXCLUDED_GALLERY_NUMBERS.has(number));
+
+  const shuffled = [...allNumbers].sort(() => Math.random() - 0.5);
+  const selected = shuffled.slice(0, SERVICE_SLIDER_IMAGE_COUNT);
+
+  return selected.map((number) => {
+    const imageId = String(number).padStart(3, '0');
+    return {
+      src: `/images/sanna/gallery/gallery-${imageId}.jpg`,
+      alt: `Sanna gallery nail image ${number}`,
+    };
+  });
+})();
+
 const HomePage: React.FC = () => {
   const [activeOptionIndex, setActiveOptionIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
+  const [serviceSlideStart, setServiceSlideStart] = useState(0);
+  const [visibleServiceCount, setVisibleServiceCount] = useState(4);
+
+  const serviceSlideCount = serviceSliderImages.length;
+  const visibleServiceImages = Array.from({ length: visibleServiceCount }, (_, index) => {
+    const imageIndex = (serviceSlideStart + index) % serviceSlideCount;
+    return serviceSliderImages[imageIndex];
+  });
 
   useEffect(() => {
     const currentWord = switchingTextOptions[activeOptionIndex];
@@ -47,6 +76,35 @@ const HomePage: React.FC = () => {
 
     return () => window.clearTimeout(timeoutId);
   }, [activeOptionIndex, isDeleting, typedText]);
+
+  useEffect(() => {
+    const updateVisibleServiceCount = () => {
+      if (window.matchMedia('(min-width: 1280px)').matches) {
+        setVisibleServiceCount(4);
+        return;
+      }
+
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        setVisibleServiceCount(2);
+        return;
+      }
+
+      setVisibleServiceCount(1);
+    };
+
+    updateVisibleServiceCount();
+    window.addEventListener('resize', updateVisibleServiceCount);
+
+    return () => window.removeEventListener('resize', updateVisibleServiceCount);
+  }, []);
+
+  const showNextServiceSlides = () => {
+    setServiceSlideStart((prev) => (prev + 1) % serviceSlideCount);
+  };
+
+  const showPreviousServiceSlides = () => {
+    setServiceSlideStart((prev) => (prev - 1 + serviceSlideCount) % serviceSlideCount);
+  };
 
   return (
     <div>
@@ -104,14 +162,11 @@ const HomePage: React.FC = () => {
             </div>
             </div>
 
-            {/* Arched image frame */}
+            {/* Rounded square image frame */}
             <div className="relative z-10 mb-2 mt-0 flex w-full max-w-[21rem] shrink-0 self-center sm:max-w-[23rem] md:mb-4 md:max-w-[25rem] lg:order-last lg:ml-auto lg:mr-6 lg:mb-[-140px] lg:mt-[-60px] lg:w-[30rem] lg:max-w-none xl:w-[34rem]">
-              <div
-                className="relative aspect-[10/11] w-full overflow-hidden shadow-2xl"
-                style={{ borderRadius: '50% 50% 0 0 / 50% 50% 0 0' }}
-              >
+              <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="/images/sanna/pink-glitter-nail.png"
+                  src="/images/sanna/gallery/gallery-091.jpg"
                   alt="Nail salon service"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ transform: 'scaleX(-1)' }}
@@ -123,7 +178,7 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section aria-label="Live Colorfully" className="w-full">
+      <section aria-label="Live Colorfully" className="w-full border-y-4 border-[#ff2c56]">
         <img
           src="/images/stock/live-colorfully.png"
           alt="Colorful nail design showcase"
@@ -134,7 +189,7 @@ const HomePage: React.FC = () => {
       <section className="bg-background pt-16 pb-8 md:pt-20 md:pb-10">
         <div className="container mx-auto px-4">
           <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-stretch">
-            <div className="order-1 max-w-3xl text-center lg:order-2 lg:col-start-2 lg:text-left">
+            <div className="order-1 mt-3 max-w-3xl text-center lg:order-2 lg:col-start-2 lg:mt-6">
               <h2 className="text-3xl font-bold text-primary md:text-4xl">The Sanna Styles Experience</h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Every appointment is designed around your schedule, your location, and your style.
@@ -142,10 +197,7 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
-              <div
-                className="relative aspect-[10/11] w-full overflow-hidden shadow-2xl lg:h-full lg:aspect-auto"
-                style={{ borderRadius: '50% 50% 0 0 / 50% 50% 0 0' }}
-              >
+              <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
                   src="/images/stock/doing-nails.jpeg"
                   alt="Nail service in progress"
@@ -191,32 +243,176 @@ const HomePage: React.FC = () => {
       </section>
 
       <section className="bg-muted/40 pt-8 pb-16 md:pt-10 md:pb-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-white p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Perfect For</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Mobile Nail Services for Every Occasion</h2>
-            <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is perfect for:</p>
+        <div
+          className="border-y-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-8 md:py-10"
+          style={{ backgroundImage: "url('/branding/large-background.jpg')" }}
+        >
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-white/85 p-8 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">Perfect For</p>
+              <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Mobile Nail Services for Every Occasion</h2>
+              <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is perfect for:</p>
 
-            <ul className="mt-6 grid list-disc gap-3 pl-6 text-foreground md:grid-cols-2">
-              <li>Busy professionals</li>
-              <li>Stay-at-home moms</li>
-              <li>Brides and bridal parties</li>
-              <li>Birthday celebrations</li>
-              <li>Girls' nights</li>
-              <li>Vacation rentals</li>
-              <li>Seniors who prefer at-home services</li>
-              <li>Anyone who values convenience</li>
+              <ul className="mt-6 grid list-disc gap-3 pl-6 text-foreground md:grid-cols-2">
+                <li>Busy professionals</li>
+                <li>Stay-at-home moms</li>
+                <li>Brides and bridal parties</li>
+                <li>Birthday celebrations</li>
+                <li>Girls' nights</li>
+                <li>Vacation rentals</li>
+                <li>Seniors who prefer at-home services</li>
+                <li>Anyone who values convenience</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="px-4 pt-10 md:px-8 lg:px-12">
+          <div className="w-full py-2">
+            <div className="flex flex-col items-center text-center">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Sanna's Services</p>
+                <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Popular Service Categories</h2>
+                <p className="mt-3 text-lg text-muted-foreground">Choose from our most-booked nail services.</p>
+              </div>
+            </div>
+
+            <ul className="mt-8 flex flex-wrap justify-center gap-3 text-foreground">
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Manicures</li>
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Pedicures</li>
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Gel Nails</li>
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Acrylics</li>
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Nail Art</li>
+              <li className="inline-flex items-center rounded-2xl border border-border bg-background px-4 py-2 font-medium">Parties &amp; Events</li>
             </ul>
+
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
+              <Button asChild className="h-12 px-8 text-base">
+                <a rel="noreferrer noopener" href="/services">
+                  More Services
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="h-12 px-8 text-base">
+                <a rel="noreferrer noopener" href="/nail-gallery">
+                  View Full Gallery
+                </a>
+              </Button>
+            </div>
+
+            <div className="mt-8 flex items-center gap-3">
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Show previous service images"
+                onClick={showPreviousServiceSlides}
+                className="shrink-0"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+
+              <div className="grid flex-1 gap-3" style={{ gridTemplateColumns: `repeat(${visibleServiceCount}, minmax(0, 1fr))` }}>
+                {visibleServiceImages.map((image) => (
+                  <div key={image.src} className="relative aspect-square overflow-hidden rounded-2xl border border-border bg-muted/20">
+                    <img src={image.src} alt={image.alt} className="h-full w-full object-cover" />
+                  </div>
+                ))}
+              </div>
+
+              <Button
+                type="button"
+                variant="outline"
+                size="icon"
+                aria-label="Show next service images"
+                onClick={showNextServiceSlides}
+                className="shrink-0"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="tech-stack" className="pt-36 bg-background" />
-      <section id="ui-components" className="pt-36 bg-muted/50" />
-      <section id="features" className="pt-36 bg-background" />
-      <section id="architecture" className="pt-36 bg-muted/50" />
-      <section id="deployment" className="pt-36 bg-background" />
-      <section id="getting-started" className="pt-36 bg-primary/5" />
+      <section
+        className="relative border-y-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+        style={{ backgroundImage: "url('/images/stock/spilt-polish.jpeg')" }}
+      >
+        <div className="absolute inset-0 bg-white/30" aria-hidden="true" />
+        <div className="relative container mx-auto px-4">
+          <div className="mx-auto max-w-5xl rounded-3xl border border-border bg-white/90 p-8 shadow-sm md:p-10">
+            <p className="text-sm font-semibold uppercase tracking-wider text-primary">Training &amp; Rentals</p>
+            <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Grow Your Nail Business With Sanna Styles</h2>
+            <p className="mt-4 text-lg text-muted-foreground">
+              For already licensed nail technicians, explore hands-on trainings, mobile salon rentals, and specialty support designed to expand your skills and services.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild>
+                <a rel="noreferrer noopener" href="/for-nail-technicians">
+                  Explore Options For Nail Techs
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b-4 border-[#ff2c56] bg-background py-16 md:py-20">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">Reviews / Testimonials</p>
+          <h2 className="mt-2 text-center text-3xl font-bold text-foreground md:text-4xl">What Clients Are Saying</h2>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+              <p className="text-muted-foreground">
+                "The easiest salon day ever. Sanna came to my home, and my nails lasted beautifully for weeks."
+              </p>
+              <p className="mt-4 font-semibold text-foreground">- Emily R.</p>
+            </article>
+
+            <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+              <p className="text-muted-foreground">
+                "We booked for a bridal party and every guest loved their set. Professional, clean, and so fun."
+              </p>
+              <p className="mt-4 font-semibold text-foreground">- Marissa T.</p>
+            </article>
+
+            <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+              <p className="text-muted-foreground">
+                "Perfect for my schedule. I can finally keep up with nail appointments without leaving the house."
+              </p>
+              <p className="mt-4 font-semibold text-foreground">- Lauren D.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        className="relative bg-cover bg-center bg-no-repeat py-16 md:py-20"
+        style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+      >
+        <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+        <div className="relative container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-black md:text-4xl">Ready for nails without the salon trip?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">
+            Book your mobile appointment today.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+              <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
+                Book Your Appointment
+              </a>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech-stack" className="h-0" />
+      <section id="ui-components" className="h-0" />
+      <section id="features" className="h-0" />
+      <section id="architecture" className="h-0" />
+      <section id="deployment" className="h-0" />
+      <section id="getting-started" className="h-0" />
     </div>
   );
 }

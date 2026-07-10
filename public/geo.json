@@ -1,0 +1,38 @@
+{
+  "name": "Sanna Styles Mobile Salon",
+  "url": "https://www.sannastyles.com",
+  "businessType": "BeautySalon",
+  "contact": {
+    "phone": "+1-801-923-3148",
+    "email": "contact@sannastyles.com"
+  },
+  "location": {
+    "city": "Salt Lake City",
+    "region": "UT",
+    "country": "US",
+    "coordinates": {
+      "latitude": 40.7608,
+      "longitude": -111.891
+    }
+  },
+  "serviceArea": [
+    "Salt Lake City, UT",
+    "South Salt Lake, UT",
+    "Millcreek, UT",
+    "Murray, UT",
+    "Holladay, UT",
+    "Sandy, UT",
+    "Draper, UT",
+    "West Valley City, UT",
+    "Surrounding Utah areas"
+  ],
+  "services": [
+    "Mobile nail appointments",
+    "Large party nail bookings",
+    "Mobile salon rental",
+    "Nail technician resources"
+  ],
+  "bookingUrl": "https://www.vagaro.com/sannastyles",
+  "serviceAreasUrl": "https://www.sannastyles.com/service-areas",
+  "updatedAt": "2026-07-10"
+}

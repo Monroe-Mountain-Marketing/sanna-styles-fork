@@ -13,6 +13,9 @@ import LuxeNightMarketPage from '@/pages/LuxeNightMarket';
 import CareersPage from '@/pages/Careers';
 import ForNailTechniciansPage from '@/pages/ForNailTechnicians';
 import MobileSalonRentPage from '@/pages/MobileSalonRent';
+import BlogPage from '@/pages/Blog';
+import HowToBookPage from '@/pages/HowToBook';
+import ServiceAreasPage from '@/pages/ServiceAreas';
 import Privacy from '@/pages/docs/Privacy';
 import Terms from '@/pages/docs/Terms';
 
@@ -33,6 +36,9 @@ export default function AppRoutes() {
         <Route path="careers" element={<CareersPage />} />
         <Route path="for-nail-technicians" element={<ForNailTechniciansPage />} />
         <Route path="mobile-salon-rent" element={<MobileSalonRentPage />} />
+        <Route path="blog" element={<BlogPage />} />
+        <Route path="how-to-book" element={<HowToBookPage />} />
+        <Route path="service-areas" element={<ServiceAreasPage />} />
         <Route path="privacy" element={<Privacy />} />
         <Route path="terms" element={<Terms />} />
       </Route>

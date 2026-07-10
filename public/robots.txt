@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Keep legal docs out of search results
+Disallow: /privacy
+Disallow: /terms
+
+Sitemap: https://www.sannastyles.com/sitemap.xml
+
+# AI crawler hint
+# https://llmstxt.org/
+LLM: https://www.sannastyles.com/llms.txt

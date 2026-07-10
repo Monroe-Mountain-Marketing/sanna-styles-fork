@@ -1,6 +1,7 @@
 import AppRoutes from "@/routes";
 import { useEffect } from 'react';
 import { SafeArea } from 'capacitor-plugin-safe-area';
+import SEOManager from '@/components/SEOManager';
 
 import "@/App.css";
 
@@ -20,7 +21,10 @@ function App() {
 }, []);
 
   return (
-    <AppRoutes />
+    <>
+      <SEOManager />
+      <AppRoutes />
+    </>
   );
 }
 

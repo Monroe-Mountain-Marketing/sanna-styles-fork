@@ -1,0 +1,16 @@
+{
+  "name": "Sanna Styles Mobile Salon",
+  "short_name": "Sanna Styles",
+  "description": "Luxury mobile nail services in Salt Lake City and surrounding Utah areas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff2c56",
+  "icons": [
+    {
+      "src": "/branding/favicon-passionpink.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

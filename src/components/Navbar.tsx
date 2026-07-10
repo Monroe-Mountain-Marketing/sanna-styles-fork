@@ -35,6 +35,7 @@ const megaMenuSections: MegaMenuSection[] = [
       { href: "/about", label: "About Sanna Styles" },
       { href: "/contact", label: "Contact Us!" },
       { href: "/nail-gallery", label: "Nail Gallery" },
+      { href: "/blog", label: "Blog" },
       { href: "/policies", label: "Policies" },
     ],
   },
@@ -42,15 +43,17 @@ const megaMenuSections: MegaMenuSection[] = [
     title: "Services",
     items: [
       { href: "/services", label: "All Services" },
+      { href: "/service-areas", label: "Service Areas" },
       { href: "/book-a-large-party-today", label: "Large Parties & Events" },
       { href: "/the-luxe-night-market-by-sanna-styles", label: "The Luxe Night Market" },
+      { href: "/how-to-book", label: "How to Book" },
     ],
   },
   {
     title: "For Nail Techs",
     items: [
-      { href: "/careers", label: "Careers" },
       { href: "/for-nail-technicians", label: "Trainings" },
+      { href: "/careers", label: "Careers" },
       { href: "/mobile-salon-rent", label: "Rentals" },
     ],
   },
@@ -190,7 +193,7 @@ export const Navbar = () => {
       </div>
       </div>
 
-      <NavigationMenu className="mx-auto hidden border-t md:flex">
+      <NavigationMenu className="mx-auto hidden w-full max-w-none border-t md:flex">
         <NavigationMenuList className="container h-14 w-screen justify-center gap-2 px-4">
           <NavigationMenuItem>
             <a
@@ -203,10 +206,10 @@ export const Navbar = () => {
           </NavigationMenuItem>
 
           {megaMenuSections.map((section) => (
-            <NavigationMenuItem key={section.title}>
+            <NavigationMenuItem key={section.title} className="relative">
               <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid w-[560px] grid-cols-[1fr_1.2fr] gap-3 p-5">
+              <NavigationMenuContent className="md:left-1/2 md:-translate-x-1/2">
+                <div className="w-[300px] rounded-xl border bg-white p-5 shadow-lg">
                   <div key={section.title}>
                     <h3 className="mb-2 text-sm font-semibold text-primary">{section.title}</h3>
                     <nav className="flex flex-col gap-1">
@@ -224,23 +227,6 @@ export const Navbar = () => {
                         </a>
                       ))}
                     </nav>
-                  </div>
-
-                  <div className="rounded-lg border bg-muted/30 p-4 text-sm">
-                    <p className="font-semibold text-foreground">{businessName}</p>
-                    <p className="mt-1 text-muted-foreground">Mobile nail services across Utah</p>
-                    <div className="mt-3 space-y-1">
-                      <p>{businessEmail}</p>
-                      <p>{businessPhone}</p>
-                    </div>
-                    <div className="mt-3 flex gap-3">
-                      <a rel="noreferrer noopener" href={facebookHref} className="text-primary hover:underline">
-                        Facebook
-                      </a>
-                      <a rel="noreferrer noopener" href={instagramHref} className="text-primary hover:underline">
-                        Instagram
-                      </a>
-                    </div>
                   </div>
                 </div>
               </NavigationMenuContent>
