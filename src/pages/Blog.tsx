@@ -1,27 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
-const posts = [
-  {
-    title: 'How Mobile Nail Services Work',
-    date: 'June 2026',
-    excerpt: 'Curious about what a mobile nail appointment actually looks like? Here\'s everything you need to know before booking.',
-    href: '/contact',
-  },
-  {
-    title: 'Top Nail Trends for Summer',
-    date: 'June 2026',
-    excerpt: 'From pastel glazes to bold negative space designs, here are the nail looks we\'re loving this season.',
-    href: '/contact',
-  },
-  {
-    title: 'Why We Started Sanna Styles',
-    date: 'May 2026',
-    excerpt: 'The story behind Utah\'s premier mobile nail salon concierge — from a downtown apprenticeship to a full mobile operation.',
-    href: '/about',
-  },
-];
-
 const BlogPage: React.FC = () => (
   <div>
     <section
@@ -49,18 +28,55 @@ const BlogPage: React.FC = () => (
 
     <section className="border-t-4 border-[#ff2c56] bg-background py-14 md:py-16">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-foreground">Latest Posts</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
-            <article key={post.title} className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
-              <p className="text-sm text-muted-foreground">{post.date}</p>
-              <h3 className="mt-2 text-xl font-semibold text-foreground">{post.title}</h3>
-              <p className="mt-3 flex-1 text-muted-foreground">{post.excerpt}</p>
+        <h2 className="text-3xl font-bold text-foreground">Featured Articles</h2>
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <img src="/images/blogs/pamper-employees.jpg" alt="Employee appreciation nail service" className="h-48 w-full object-cover" />
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-sm text-muted-foreground">July 2026</p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">
+                Looking for a Unique Way to Reward and Pamper Your Employees?
+              </h3>
+              <p className="mt-3 flex-1 text-muted-foreground">
+                Discover how Sanna Styles brings luxury mobile nail services directly to your office for employee and client appreciation events.
+              </p>
               <Button asChild variant="outline" className="mt-5 w-fit">
-                <a rel="noreferrer noopener" href={post.href}>Read More</a>
+                <a rel="noreferrer noopener" href="/blog/corporate-pampering">Read Article</a>
               </Button>
-            </article>
-          ))}
+            </div>
+          </article>
+
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <img src="/images/blogs/trade-show.jpg" alt="Trade show nail art booth" className="h-48 w-full object-cover" />
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-sm text-muted-foreground">July 2026</p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">
+                Looking to Make a Lasting Impression at Your Next Convention or Trade Show?
+              </h3>
+              <p className="mt-3 flex-1 text-muted-foreground">
+                Learn how on-site mini manicures and branded nail art can draw crowds and make your booth unforgettable.
+              </p>
+              <Button asChild variant="outline" className="mt-5 w-fit">
+                <a rel="noreferrer noopener" href="/blog/trade-show-activation">Read Article</a>
+              </Button>
+            </div>
+          </article>
+
+          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <img src="/images/blogs/bridal-pampering.jpg" alt="Bridal party pampering" className="h-48 w-full object-cover" />
+            <div className="flex flex-1 flex-col p-6">
+              <p className="text-sm text-muted-foreground">July 2026</p>
+              <h3 className="mt-2 text-2xl font-semibold text-foreground">
+                The Perfect Bridal Party Pampering Experience with Sanna Styles
+              </h3>
+              <p className="mt-3 flex-1 text-muted-foreground">
+                From premium pedicures to custom nail art, discover how Sanna Styles brings a full luxury salon experience to your wedding prep.
+              </p>
+              <Button asChild variant="outline" className="mt-5 w-fit">
+                <a rel="noreferrer noopener" href="/blog/bridal-pampering">Read Article</a>
+              </Button>
+            </div>
+          </article>
         </div>
       </div>
     </section>

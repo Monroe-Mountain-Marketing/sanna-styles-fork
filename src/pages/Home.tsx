@@ -199,7 +199,7 @@ const HomePage: React.FC = () => {
             <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="/images/stock/doing-nails.jpeg"
+                  src="/public/images/sanna/about/sanna-styles.jpg"
                   alt="Nail service in progress"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ transform: 'scaleX(-1)' }}

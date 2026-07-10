@@ -14,6 +14,9 @@ import CareersPage from '@/pages/Careers';
 import ForNailTechniciansPage from '@/pages/ForNailTechnicians';
 import MobileSalonRentPage from '@/pages/MobileSalonRent';
 import BlogPage from '@/pages/Blog';
+import BlogCorporatePamperingPage from '@/pages/BlogCorporatePampering';
+import BlogTradeShowActivationPage from '@/pages/BlogTradeShowActivation';
+import BlogBridalPamperingPage from '@/pages/BlogBridalPampering';
 import HowToBookPage from '@/pages/HowToBook';
 import ServiceAreasPage from '@/pages/ServiceAreas';
 import Privacy from '@/pages/docs/Privacy';
@@ -37,6 +40,9 @@ export default function AppRoutes() {
         <Route path="for-nail-technicians" element={<ForNailTechniciansPage />} />
         <Route path="mobile-salon-rent" element={<MobileSalonRentPage />} />
         <Route path="blog" element={<BlogPage />} />
+        <Route path="blog/corporate-pampering" element={<BlogCorporatePamperingPage />} />
+        <Route path="blog/trade-show-activation" element={<BlogTradeShowActivationPage />} />
+        <Route path="blog/bridal-pampering" element={<BlogBridalPamperingPage />} />
         <Route path="how-to-book" element={<HowToBookPage />} />
         <Route path="service-areas" element={<ServiceAreasPage />} />
         <Route path="privacy" element={<Privacy />} />
