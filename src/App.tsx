@@ -6,7 +6,6 @@ import SEOManager from '@/components/SEOManager';
 import "@/App.css";
 
 function App() {
-
   useEffect(() => {
     (async function(){
         const safeAreaData = await SafeArea.getSafeAreaInsets();

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 interface FooterLink {
   label: string;
   href: string;
@@ -43,13 +45,13 @@ export const Footer = () => {
       <section className="container py-16">
         <div className="grid gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_2fr] lg:gap-12">
           <div className="max-w-md justify-self-start md:col-start-1 md:row-start-1 lg:justify-self-center lg:row-span-2">
-            <a rel="noreferrer noopener" href="/" className="inline-flex w-full justify-start lg:justify-center">
+            <Link to="/" className="inline-flex w-full justify-start lg:justify-center">
               <img
                 src="/branding/pink-stacked.png"
                 alt="Sanna Styles Mobile Salon"
                 className="h-44 w-auto"
               />
-            </a>
+            </Link>
           </div>
 
           <p className="max-w-3xl text-sm leading-6 text-muted-foreground md:col-start-2 md:row-start-1 md:justify-self-center md:self-center md:text-center lg:justify-self-start lg:text-left">
@@ -61,14 +63,13 @@ export const Footer = () => {
               <div key={section.title} className="flex flex-col gap-2">
                 <h3 className="font-semibold text-primary">{section.title}</h3>
                 {section.links.map((link) => (
-                  <a
+                  <Link
                     key={link.label}
-                    rel="noreferrer noopener"
-                    href={link.href}
+                    to={link.href}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             ))}
@@ -82,13 +83,13 @@ export const Footer = () => {
             &copy; 2026 <span className="text-white">Sanna Styles</span>. All rights reserved.
           </p>
           <div className="flex items-center gap-2 text-white">
-            <a rel="noreferrer noopener" href="/privacy" className="hover:text-black">
+            <Link to="/privacy" className="hover:text-black">
               Privacy Policy
-            </a>
+            </Link>
             <span>|</span>
-            <a rel="noreferrer noopener" href="/terms" className="hover:text-black">
+            <Link to="/terms" className="hover:text-black">
               Terms of Use
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,0 +1,11 @@
+name: sanna-styles
+static_sites:
+  - name: web
+    source_dir: /
+    github:
+      repo: openskysolutions/react-vite-shadcn
+      branch: dev
+      deploy_on_push: true
+    build_command: npm ci && npm run build
+    output_dir: dist
+    catchall_document: index.html

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Link } from 'react-router-dom';
 
 const MobileSalonRentPage: React.FC = () => (
   <div>
@@ -105,7 +106,7 @@ const MobileSalonRentPage: React.FC = () => (
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Check availability and get your mobile setup scheduled.</p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/contact">Request Rental Availability</a>
+            <Link to="/contact">Request Rental Availability</Link>
           </Button>
         </div>
       </div>

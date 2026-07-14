@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const switchingTextOptions = [
   'Corporate Event',
@@ -137,21 +138,21 @@ const HomePage: React.FC = () => {
 
             <div className="grid grid-cols-2 gap-3 pb-1 sm:flex sm:flex-nowrap">
               <Button asChild className="w-full border-0 bg-[#ff2c56] text-white hover:bg-[#ff2c56]/90 sm:w-auto">
-                <a rel="noreferrer noopener" href="/services">
+                <Link to="/services">
                   All Services
-                </a>
+                </Link>
               </Button>
 
               <Button asChild className="w-full border-0 bg-[#f49ca3] text-black hover:bg-[#f49ca3]/90 sm:w-auto">
-                <a rel="noreferrer noopener" href="/book-a-large-party-today">
+                <Link to="/book-a-large-party-today">
                   Parties & Events
-                </a>
+                </Link>
               </Button>
 
               <Button asChild className="w-full border-0 bg-[#85bfd6] text-black hover:bg-[#85bfd6]/90 sm:w-auto">
-                <a rel="noreferrer noopener" href="/contact">
+                <Link to="/contact">
                   Contact
-                </a>
+                </Link>
               </Button>
 
               <Button asChild className="w-full border-0 bg-[#e2cf5d] text-black hover:bg-[#e2cf5d]/90 sm:w-auto">
@@ -199,7 +200,7 @@ const HomePage: React.FC = () => {
             <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="/public/images/sanna/about/sanna-styles.jpg"
+                  src="/images/sanna/about/sanna-styles.jpg"
                   alt="Nail service in progress"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ transform: 'scaleX(-1)' }}
@@ -288,14 +289,14 @@ const HomePage: React.FC = () => {
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Button asChild className="h-12 px-8 text-base">
-                <a rel="noreferrer noopener" href="/services">
+                <Link to="/services">
                   More Services
-                </a>
+                </Link>
               </Button>
               <Button asChild variant="outline" className="h-12 px-8 text-base">
-                <a rel="noreferrer noopener" href="/nail-gallery">
+                <Link to="/nail-gallery">
                   View Full Gallery
-                </a>
+                </Link>
               </Button>
             </div>
 
@@ -348,9 +349,9 @@ const HomePage: React.FC = () => {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button asChild>
-                <a rel="noreferrer noopener" href="/for-nail-technicians">
+                <Link to="/for-nail-technicians">
                   Explore Options For Nail Techs
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

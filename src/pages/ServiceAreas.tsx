@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const primaryAreas = [
   'Salt Lake City',
@@ -68,10 +69,10 @@ const ServiceAreasPage: React.FC = () => (
         </ul>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button asChild className="h-11 px-7 text-base">
-            <a rel="noreferrer noopener" href="/contact">Check My Address</a>
+            <Link to="/contact">Check My Address</Link>
           </Button>
           <Button asChild variant="outline" className="h-11 px-7 text-base">
-            <a rel="noreferrer noopener" href="/how-to-book">How to Book</a>
+            <Link to="/how-to-book">How to Book</Link>
           </Button>
         </div>
       </div>

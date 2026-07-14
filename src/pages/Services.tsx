@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 interface ServiceCard {
   name: string;
@@ -243,7 +244,7 @@ const ServicesPage: React.FC = () => (
         </p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-11 border-2 border-[#ff2c56] bg-[#ff2c56] px-7 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/how-to-book">How to Book?</a>
+            <Link to="/how-to-book">How to Book?</Link>
           </Button>
         </div>
       </div>
@@ -264,7 +265,7 @@ const ServicesPage: React.FC = () => (
                 <p className="mt-3 flex-1 text-sm text-muted-foreground leading-relaxed">{card.description}</p>
                 {card.link && (
                   <Button asChild className="mt-4 w-fit h-9 border-2 border-[#bbefe0] bg-[#bbefe0] px-5 text-sm font-semibold text-black hover:bg-[#bbefe0]/90">
-                    <a rel="noreferrer noopener" href={card.link.href}>{card.link.label}</a>
+                    <Link to={card.link.href}>{card.link.label}</Link>
                   </Button>
                 )}
               </article>
@@ -292,7 +293,7 @@ const ServicesPage: React.FC = () => (
             <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
           </Button>
           <Button asChild className="h-12 border-2 border-black/20 bg-white px-8 text-base font-semibold text-black hover:bg-white/90">
-            <a rel="noreferrer noopener" href="/contact">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </div>

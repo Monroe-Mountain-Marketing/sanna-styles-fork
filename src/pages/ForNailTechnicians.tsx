@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const ForNailTechniciansPage: React.FC = () => (
   <div>
@@ -36,7 +37,7 @@ const ForNailTechniciansPage: React.FC = () => (
                 We took that class and made it an online learning experience that you can watch at any time. By purchasing this digital access class you will be able to learn from the great Sanna herself on how to become a legal business and operate within Utah and each county you wish to perform services in.
               </p>
               <Button asChild className="mt-6 h-10 border-2 border-[#ff2c56] bg-[#ff2c56] px-6 text-sm font-semibold text-white hover:bg-[#ff2c56]/90">
-                <a rel="noreferrer noopener" href="/contact">Inquire to Enroll</a>
+                <Link to="/contact">Inquire to Enroll</Link>
               </Button>
             </div>
           </div>
@@ -66,7 +67,7 @@ const ForNailTechniciansPage: React.FC = () => (
               Whether you are just starting or looking to scale your business, <span className="font-semibold text-foreground">Nailpreneur Masterclass</span> gives you the tools, techniques, and confidence to excel. Don&apos;t just follow trends, set them. Join today and take the first step toward becoming a true <span className="font-semibold text-foreground">Nailpreneur</span>.
             </p>
             <Button asChild className="mt-6 h-10 border-2 border-[#ff2c56] bg-[#ff2c56] px-6 text-sm font-semibold text-white hover:bg-[#ff2c56]/90">
-              <a rel="noreferrer noopener" href="/contact">Inquire to Enroll</a>
+              <Link to="/contact">Inquire to Enroll</Link>
             </Button>
           </div>
         </div>
@@ -114,10 +115,10 @@ const ForNailTechniciansPage: React.FC = () => (
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Explore training, rentals, and career opportunities with Sanna Styles.</p>
         <div className="mt-6 flex justify-center gap-3">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/mobile-salon-rent">Explore Rental Options</a>
+            <Link to="/mobile-salon-rent">Explore Rental Options</Link>
           </Button>
           <Button asChild className="h-12 border-2 border-black/20 bg-white px-8 text-base font-semibold text-black hover:bg-white/90">
-            <a rel="noreferrer noopener" href="/careers">View Career Opportunities</a>
+            <Link to="/careers">View Career Opportunities</Link>
           </Button>
         </div>
       </div>

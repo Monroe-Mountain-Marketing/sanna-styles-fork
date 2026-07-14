@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const steps = [
   {
@@ -64,10 +65,10 @@ const HowToBookPage: React.FC = () => (
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
           <Button asChild className="h-11 px-7 text-base">
-            <a rel="noreferrer noopener" href="/book-a-large-party-today">Large Parties &amp; Events</a>
+            <Link to="/book-a-large-party-today">Large Parties &amp; Events</Link>
           </Button>
           <Button asChild variant="outline" className="h-11 px-7 text-base">
-            <a rel="noreferrer noopener" href="/contact">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
       </div>

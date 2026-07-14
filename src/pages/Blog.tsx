@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const BlogPage: React.FC = () => (
   <div>
@@ -41,7 +42,7 @@ const BlogPage: React.FC = () => (
                 Discover how Sanna Styles brings luxury mobile nail services directly to your office for employee and client appreciation events.
               </p>
               <Button asChild variant="outline" className="mt-5 w-fit">
-                <a rel="noreferrer noopener" href="/blog/corporate-pampering">Read Article</a>
+                <Link to="/blog/corporate-pampering">Read Article</Link>
               </Button>
             </div>
           </article>
@@ -57,7 +58,7 @@ const BlogPage: React.FC = () => (
                 Learn how on-site mini manicures and branded nail art can draw crowds and make your booth unforgettable.
               </p>
               <Button asChild variant="outline" className="mt-5 w-fit">
-                <a rel="noreferrer noopener" href="/blog/trade-show-activation">Read Article</a>
+                <Link to="/blog/trade-show-activation">Read Article</Link>
               </Button>
             </div>
           </article>
@@ -73,7 +74,7 @@ const BlogPage: React.FC = () => (
                 From premium pedicures to custom nail art, discover how Sanna Styles brings a full luxury salon experience to your wedding prep.
               </p>
               <Button asChild variant="outline" className="mt-5 w-fit">
-                <a rel="noreferrer noopener" href="/blog/bridal-pampering">Read Article</a>
+                <Link to="/blog/bridal-pampering">Read Article</Link>
               </Button>
             </div>
           </article>

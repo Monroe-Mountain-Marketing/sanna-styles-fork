@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const LUXE_IMAGES = Array.from({ length: 11 }, (_, i) => ({
   src: `/images/sanna/luxenight/luxenight-${String(i + 1).padStart(2, '0')}.jpg`,
@@ -145,7 +146,7 @@ const LuxeNightMarketPage: React.FC = () => {
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Tell us your date and vibe. We'll bring the luxury to you.</p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/contact">Inquire About Availability</a>
+            <Link to="/contact">Inquire About Availability</Link>
           </Button>
         </div>
       </div>

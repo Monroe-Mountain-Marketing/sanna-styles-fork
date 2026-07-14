@@ -17,6 +17,7 @@ import {
 import { Button, buttonVariants } from "./ui/button";
 import { Facebook, Instagram, Menu } from "lucide-react";
 import cn from "classnames";
+import { Link } from "react-router-dom";
 
 interface NavLink {
   href: string;
@@ -76,9 +77,8 @@ export const Navbar = () => {
       <div className="bg-white">
         <div className="container grid h-20 grid-cols-2 items-center px-4 md:grid-cols-3">
         <div className="hidden items-center gap-2 md:flex">
-          <a
-            rel="noreferrer noopener"
-            href={facebookHref}
+          <Link
+            to={facebookHref}
             aria-label="Sanna Styles Facebook"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
@@ -86,10 +86,9 @@ export const Navbar = () => {
             )}
           >
             <Facebook className="h-4 w-4" />
-          </a>
-          <a
-            rel="noreferrer noopener"
-            href={instagramHref}
+          </Link>
+          <Link
+            to={instagramHref}
             aria-label="Sanna Styles Instagram"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
@@ -97,13 +96,12 @@ export const Navbar = () => {
             )}
           >
             <Instagram className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
 
         <div className="flex justify-start md:justify-center">
-          <a
-            rel="noreferrer noopener"
-            href={businessDomain}
+          <Link
+            to={businessDomain}
             className="inline-flex items-center"
           >
             <img
@@ -111,14 +109,14 @@ export const Navbar = () => {
               alt="Sanna Styles Mobile Salon"
               className="h-12 w-auto md:h-16"
             />
-          </a>
+          </Link>
         </div>
 
         <div className="hidden items-center justify-end gap-2 md:flex">
           <Button asChild variant="outline" size="sm">
-            <a rel="noreferrer noopener" href={contactPageHref}>
+            <Link to={contactPageHref}>
               Contact Us Today!
-            </a>
+            </Link>
           </Button>
           <Button asChild size="sm">
             <a rel="noreferrer noopener" href={bookNowHref} target="_blank">
@@ -143,15 +141,14 @@ export const Navbar = () => {
                     <h3 className="mb-2 text-sm font-semibold text-primary">{section.title}</h3>
                     <nav className="flex flex-col gap-1">
                       {section.items.map((item) => (
-                        <a
+                        <Link
                           key={item.label}
-                          rel="noreferrer noopener"
-                          href={item.href}
+                          to={item.href}
                           onClick={() => setIsOpen(false)}
                           className={buttonVariants({ variant: "ghost", size: "sm" })}
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>
@@ -159,9 +156,9 @@ export const Navbar = () => {
 
                 <div className="space-y-2 border-t pt-4">
                   <Button asChild className="w-full" variant="outline">
-                    <a rel="noreferrer noopener" href={contactPageHref} onClick={() => setIsOpen(false)}>
+                    <Link to={contactPageHref} onClick={() => setIsOpen(false)}>
                       Contact Us Today!
-                    </a>
+                    </Link>
                   </Button>
                   <Button asChild className="w-full">
                     <a rel="noreferrer noopener" href={bookNowHref} target="_blank" onClick={() => setIsOpen(false)}>
@@ -178,12 +175,12 @@ export const Navbar = () => {
                     <span>{businessPhone}</span>
                   </p>
                   <div className="mt-2 flex gap-4">
-                    <a rel="noreferrer noopener" href={facebookHref} className="hover:text-primary">
+                    <Link to={facebookHref} className="hover:text-primary">
                       Facebook
-                    </a>
-                    <a rel="noreferrer noopener" href={instagramHref} className="hover:text-primary">
+                    </Link>
+                    <Link to={instagramHref} className="hover:text-primary">
                       Instagram
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -196,13 +193,12 @@ export const Navbar = () => {
       <NavigationMenu className="mx-auto hidden w-full max-w-none border-t md:flex">
         <NavigationMenuList className="container h-14 w-screen justify-center gap-2 px-4">
           <NavigationMenuItem>
-            <a
-              rel="noreferrer noopener"
-              href={businessDomain}
+            <Link
+              to={businessDomain}
               className={buttonVariants({ variant: "ghost" })}
             >
               Home
-            </a>
+            </Link>
           </NavigationMenuItem>
 
           {megaMenuSections.map((section) => (
@@ -214,17 +210,16 @@ export const Navbar = () => {
                     <h3 className="mb-2 text-sm font-semibold text-primary">{section.title}</h3>
                     <nav className="flex flex-col gap-1">
                       {section.items.map((item) => (
-                        <a
+                        <Link
                           key={item.label}
-                          rel="noreferrer noopener"
-                          href={item.href}
+                          to={item.href}
                           className={cn(
                             buttonVariants({ variant: "ghost", size: "sm" }),
                             "justify-start text-left"
                           )}
                         >
                           {item.label}
-                        </a>
+                        </Link>
                       ))}
                     </nav>
                   </div>

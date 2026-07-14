@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const CareersPage: React.FC = () => (
   <div>
@@ -116,7 +117,7 @@ const CareersPage: React.FC = () => (
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Apply today and bring your skills to Utah's premier mobile nail salon.</p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/contact">Apply Now</a>
+            <Link to="/contact">Apply Now</Link>
           </Button>
         </div>
       </div>

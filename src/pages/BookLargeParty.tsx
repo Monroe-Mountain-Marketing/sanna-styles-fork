@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const BookLargePartyPage: React.FC = () => {
   useEffect(() => {
@@ -127,7 +128,7 @@ const BookLargePartyPage: React.FC = () => {
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Get in touch to discuss pricing, guest count, and event details.</p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/contact">Request Event Pricing</a>
+            <Link to="/contact">Request Event Pricing</Link>
           </Button>
         </div>
       </div>

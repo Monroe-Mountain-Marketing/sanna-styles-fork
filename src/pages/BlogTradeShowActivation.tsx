@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const BlogTradeShowActivationPage: React.FC = () => (
   <div>
@@ -20,7 +21,7 @@ const BlogTradeShowActivationPage: React.FC = () => (
       <article className="container mx-auto max-w-4xl px-4 text-foreground">
         <div className="mb-6">
           <Button asChild variant="outline">
-            <a href="/blog">&larr; Back to All Blogs</a>
+            <Link to="/blog">&larr; Back to All Blogs</Link>
           </Button>
         </div>
 
@@ -72,12 +73,12 @@ const BlogTradeShowActivationPage: React.FC = () => (
 
         <div className="mt-10 flex flex-wrap gap-4">
           <Button asChild className="border-0 bg-[#e2cf5d] px-8 py-6 text-lg font-bold text-black shadow-md hover:bg-[#e2cf5d]/90">
-            <a href="/book-a-large-party-today">
+            <Link to="/book-a-large-party-today">
               Book Your Event Today
-            </a>
+            </Link>
           </Button>
           <Button asChild variant="outline">
-            <a href="/blog">&larr; Back to All Blogs</a>
+            <Link to="/blog">&larr; Back to All Blogs</Link>
           </Button>
         </div>
       </article>

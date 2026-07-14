@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const PoliciesPage: React.FC = () => (
   <div>
@@ -120,15 +121,15 @@ const PoliciesPage: React.FC = () => (
           <h2 className="text-2xl font-bold text-foreground">Privacy Policy &amp; Terms of Use</h2>
           <p className="mt-3 text-muted-foreground">
             You may find our Privacy Policy located at{' '}
-            <a href="/privacy" className="font-medium text-primary hover:underline">
+            <Link to="/privacy" className="font-medium text-primary hover:underline">
               /privacy
-            </a>
+            </Link>
           </p>
           <p className="mt-2 text-muted-foreground">
             You may find our Terms of Use located at{' '}
-            <a href="/terms" className="font-medium text-primary hover:underline">
+            <Link to="/terms" className="font-medium text-primary hover:underline">
               /terms
-            </a>
+            </Link>
           </p>
         </article>
 
@@ -145,7 +146,7 @@ const PoliciesPage: React.FC = () => (
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">We're happy to help clarify anything before your appointment.</p>
         <div className="mt-6 flex justify-center">
           <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
-            <a rel="noreferrer noopener" href="/contact">Contact Support</a>
+            <Link to="/contact">Contact Support</Link>
           </Button>
         </div>
       </div>
