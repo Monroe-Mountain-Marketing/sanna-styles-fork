@@ -4,18 +4,19 @@ const AboutPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/color-swatches.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">All About Sanna Styles</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">All About <span className="font-display italic">Sanna Styles</span></h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           We are a Mobile and Traveling Nail Salon
         </p>
       </div>
     </section>
 
-    <section className="border-t-4 border-[#ff2c56] bg-background py-14 md:py-16">
+    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
       <div className="container mx-auto space-y-14 px-4 md:space-y-16">
         <article>
           <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">

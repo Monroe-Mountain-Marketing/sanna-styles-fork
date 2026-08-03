@@ -6,11 +6,12 @@ const BlogPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/single-flower.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">Blog</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">Blog</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Tips, trends, and behind-the-scenes stories from Sanna Styles.
         </p>
@@ -19,7 +20,7 @@ const BlogPage: React.FC = () => (
         </p>
         <ul className="mx-auto mt-3 flex max-w-3xl flex-wrap justify-center gap-2">
           {['Nail Care', 'Trends', 'Behind the Scenes', 'Mobile Salon Life', 'Events', 'Tips & Tricks'].map((tag) => (
-            <li key={tag} className="inline-flex items-center rounded-full border border-border bg-white px-3 py-1 text-sm font-medium text-foreground">
+            <li key={tag} className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">
               {tag}
             </li>
           ))}
@@ -27,11 +28,11 @@ const BlogPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-t-4 border-[#ff2c56] bg-background py-14 md:py-16">
+    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Featured Articles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+          <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
             <img src="/images/blogs/pamper-employees.jpg" alt="Employee appreciation nail service" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>
@@ -47,7 +48,7 @@ const BlogPage: React.FC = () => (
             </div>
           </article>
 
-          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+          <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
             <img src="/images/blogs/trade-show.jpg" alt="Trade show nail art booth" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>
@@ -63,7 +64,7 @@ const BlogPage: React.FC = () => (
             </div>
           </article>
 
-          <article className="flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+          <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
             <img src="/images/blogs/bridal-pampering.jpg" alt="Bridal party pampering" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>

@@ -32,21 +32,22 @@ const HowToBookPage: React.FC = () => (
       style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">How to Book</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">How to Book</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Booking your mobile nail appointment is quick and easy. Here's how it works.
         </p>
       </div>
     </section>
 
-    <section className="border-y-4 border-[#ff2c56] bg-background py-14 md:py-16">
+    <section className="border-y-4 border-[#f49ca3] bg-background py-14 md:py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Your Booking Process</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((item) => (
-            <article key={item.step} className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#ff2c56] text-lg font-bold text-white">
+            <article key={item.step} className="flex flex-col rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#f49ca3] text-lg font-bold text-white">
                 {item.step}
               </span>
               <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>
@@ -75,17 +76,17 @@ const HowToBookPage: React.FC = () => (
     </section>
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Book?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">
           Schedule your mobile nail appointment on Vagaro today.
         </p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
           </Button>
         </div>

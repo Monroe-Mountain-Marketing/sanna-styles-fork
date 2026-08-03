@@ -41,7 +41,7 @@ const footerSections: FooterSection[] = [
 
 export const Footer = () => {
   return (
-    <footer id="footer" className="mt-0 border-t-4 border-[#ff2c56] bg-background">
+    <footer id="footer" className="mt-0 border-t-4 border-[#f49ca3] bg-background">
       <section className="container py-16">
         <div className="grid gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-[1fr_2fr] lg:gap-12">
           <div className="max-w-md justify-self-start md:col-start-1 md:row-start-1 lg:justify-self-center lg:row-span-2">

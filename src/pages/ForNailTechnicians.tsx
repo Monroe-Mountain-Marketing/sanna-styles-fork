@@ -6,18 +6,19 @@ const ForNailTechniciansPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/natural-swatches.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">For Nail Technicians</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">For <span className="font-display italic">Nail Technicians</span></h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           These programs are built for already licensed nail technicians looking to sharpen high-value skills, grow sustainable businesses, and offer premium mobile experiences. Explore two focused training paths designed to help you level up your career.
         </p>
       </div>
     </section>
 
-    <section className="border-y-4 border-[#ff2c56] bg-background py-16 md:py-20">
+    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
       <div className="container mx-auto px-4">
         <article className="py-2">
           <div className="grid items-start gap-6 md:grid-cols-[minmax(240px,360px)_1fr] md:gap-8">
@@ -36,7 +37,7 @@ const ForNailTechniciansPage: React.FC = () => (
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 We took that class and made it an online learning experience that you can watch at any time. By purchasing this digital access class you will be able to learn from the great Sanna herself on how to become a legal business and operate within Utah and each county you wish to perform services in.
               </p>
-              <Button asChild className="mt-6 h-10 border-2 border-[#ff2c56] bg-[#ff2c56] px-6 text-sm font-semibold text-white hover:bg-[#ff2c56]/90">
+              <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
                 <Link to="/contact">Inquire to Enroll</Link>
               </Button>
             </div>
@@ -66,7 +67,7 @@ const ForNailTechniciansPage: React.FC = () => (
             <p className="mt-3 leading-relaxed text-muted-foreground">
               Whether you are just starting or looking to scale your business, <span className="font-semibold text-foreground">Nailpreneur Masterclass</span> gives you the tools, techniques, and confidence to excel. Don&apos;t just follow trends, set them. Join today and take the first step toward becoming a true <span className="font-semibold text-foreground">Nailpreneur</span>.
             </p>
-            <Button asChild className="mt-6 h-10 border-2 border-[#ff2c56] bg-[#ff2c56] px-6 text-sm font-semibold text-white hover:bg-[#ff2c56]/90">
+            <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
               <Link to="/contact">Inquire to Enroll</Link>
             </Button>
           </div>
@@ -106,15 +107,15 @@ const ForNailTechniciansPage: React.FC = () => (
     </section>
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Grow Your Nail Career?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Explore training, rentals, and career opportunities with Sanna Styles.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <Link to="/mobile-salon-rent">Explore Rental Options</Link>
           </Button>
           <Button asChild className="h-12 border-2 border-black/20 bg-white px-8 text-base font-semibold text-black hover:bg-white/90">

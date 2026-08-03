@@ -6,18 +6,19 @@ const BlogTradeShowActivationPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-20 md:py-28"
-      style={{ backgroundImage: "url('/images/blogs/trade-show.jpg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-foreground/70">Sanna Styles Blog</p>
-        <h1 className="mx-auto mt-3 max-w-4xl text-4xl font-bold text-primary md:text-5xl">
+        <h1 className="mx-auto mt-3 max-w-4xl text-4xl font-bold text-black md:text-5xl">
           Looking to Make a Lasting Impression at Your Next Convention or Trade Show?
         </h1>
       </div>
     </section>
 
-    <section className="border-t-4 border-[#ff2c56] bg-background py-14 md:py-16">
+    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
       <article className="container mx-auto max-w-4xl px-4 text-foreground">
         <div className="mb-6">
           <Button asChild variant="outline">
@@ -25,7 +26,7 @@ const BlogTradeShowActivationPage: React.FC = () => (
           </Button>
         </div>
 
-        <div className="mb-8 rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <div className="mb-8 rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <a
             href="https://sannastyles.com/book-a-large-party-today/#form"
             className="text-lg font-semibold text-primary underline underline-offset-4"

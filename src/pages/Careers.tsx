@@ -6,18 +6,19 @@ const CareersPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/doing-nails.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">Careers</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">Careers</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Join a growing mobile beauty brand focused on premium service, flexibility, and creative excellence.
         </p>
       </div>
     </section>
 
-    <section className="border-y-4 border-[#ff2c56] bg-background py-16 md:py-20">
+    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
       <div className="container mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-8 md:grid-cols-[1fr_minmax(240px,360px)] md:gap-10">
           <div>
@@ -108,15 +109,15 @@ const CareersPage: React.FC = () => (
     </section>
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Join the Team?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Apply today and bring your skills to Utah's premier mobile nail salon.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <Link to="/contact">Apply Now</Link>
           </Button>
         </div>

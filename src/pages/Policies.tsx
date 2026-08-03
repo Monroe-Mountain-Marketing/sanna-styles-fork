@@ -6,22 +6,23 @@ const PoliciesPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/shadows.jpg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">Policies</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">Policies</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Clear service policies help protect your appointment time and ensure a smooth experience for everyone.
         </p>
       </div>
     </section>
 
-    <section className="border-t-4 border-[#ff2c56] bg-background py-14 md:py-16">
+    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
       <div className="container mx-auto space-y-10 px-4">
 
         {/* Refunds */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Refunds</h2>
           <p className="mt-3 text-muted-foreground">
             Sanna Styles exercises a No Refund Policy on all services booked or rendered, classes or education purchased, and any equipment or gear purchased.
@@ -29,7 +30,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Cancellations */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Cancellations</h2>
           <div className="mt-4 space-y-4">
             <div>
@@ -48,7 +49,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* No Shows */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">No Shows / No Showing</h2>
           <div className="mt-4 space-y-6">
             <div>
@@ -79,7 +80,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Pets/animals/children */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Pets / Animals / Children</h2>
           <div className="mt-4 space-y-4">
             <div>
@@ -105,7 +106,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Covid-19 */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Covid-19</h2>
           <p className="mt-3 text-muted-foreground">
             Sanna Styles follows the CDC Utah Health guidelines. The only thing that pampering you comes in second to, is the health and wellbeing of our families and community. We ask the following from every guest:
@@ -117,7 +118,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Privacy & Terms */}
-        <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Privacy Policy &amp; Terms of Use</h2>
           <p className="mt-3 text-muted-foreground">
             You may find our Privacy Policy located at{' '}
@@ -137,15 +138,15 @@ const PoliciesPage: React.FC = () => (
     </section>
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Have a Question About Our Policies?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">We're happy to help clarify anything before your appointment.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <Link to="/contact">Contact Support</Link>
           </Button>
         </div>

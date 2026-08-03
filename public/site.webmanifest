@@ -5,7 +5,7 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#ff2c56",
+  "theme_color": "#f49ca3",
   "icons": [
     {
       "src": "/branding/favicon-passionpink.png",

@@ -234,16 +234,17 @@ const ServicesPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/pink-polish.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">Services</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">Services</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Premium mobile nail services tailored for everyday beauty, celebrations, and on-location events.
         </p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-11 border-2 border-[#ff2c56] bg-[#ff2c56] px-7 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <Link to="/how-to-book">How to Book?</Link>
           </Button>
         </div>
@@ -252,12 +253,12 @@ const ServicesPage: React.FC = () => (
 
 
     {sections.map((section) => (
-      <section key={section.id} id={section.id} className={`${section.bg} border-t-4 border-[#ff2c56] py-14 md:py-16`}>
+      <section key={section.id} id={section.id} className={`${section.bg} border-t-4 border-[#f49ca3] py-14 md:py-16`}>
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">{section.title}</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {section.cards.map((card) => (
-              <article key={card.name} className="flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm">
+              <article key={card.name} className="flex flex-col rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
                 <h3 className="text-lg font-semibold text-foreground">{card.name}</h3>
                 {card.price && (
                   <p className="mt-1 text-base font-semibold text-primary">{card.price}</p>
@@ -272,7 +273,7 @@ const ServicesPage: React.FC = () => (
             ))}
           </div>
           <div className="mt-8">
-            <Button asChild className="h-10 border-2 border-[#ff2c56] bg-[#ff2c56] px-6 text-sm font-semibold text-white hover:bg-[#ff2c56]/90">
+            <Button asChild className="h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
               <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
             </Button>
           </div>
@@ -281,15 +282,15 @@ const ServicesPage: React.FC = () => (
     ))}
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Book?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Schedule your mobile nail appointment today.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
           </Button>
           <Button asChild className="h-12 border-2 border-black/20 bg-white px-8 text-base font-semibold text-black hover:bg-white/90">

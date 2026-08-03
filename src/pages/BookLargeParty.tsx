@@ -18,18 +18,19 @@ const BookLargePartyPage: React.FC = () => {
   <div>
     <section
       className="relative bg-cover bg-top bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/passion-balloons.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
     >
       <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
-      <div className="relative container mx-auto px-4 text-center">
-        <h1 className="text-4xl font-bold text-primary md:text-5xl">Large Parties &amp; Events</h1>
+      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="relative z-[2] container mx-auto px-4 text-center">
+        <h1 className="text-4xl font-bold text-black md:text-5xl">Large Parties &amp; Events</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Sanna Styles specializes in large party services.
         </p>
       </div>
     </section>
 
-    <section className="border-y-4 border-[#ff2c56] bg-background py-16 md:py-20">
+    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
       <div className="container mx-auto px-4">
         <div className="text-center">
           <h2 className="text-3xl font-bold text-foreground">Book Your Large Party Now!</h2>
@@ -37,7 +38,7 @@ const BookLargePartyPage: React.FC = () => {
             Sanna Styles is purposefully built to allow our team to perform professional salon services in every environment.
           </p>
           <div className="mt-6">
-            <Button asChild className="h-11 border-2 border-[#ff2c56] bg-[#ff2c56] px-7 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+            <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
               <a rel="noreferrer noopener" href="https://sannastyles.com/book-a-large-party-today/#form" target="_blank">Book Now</a>
             </Button>
           </div>
@@ -63,28 +64,28 @@ const BookLargePartyPage: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Why You Should Entrust Your Event to Sanna Styles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Our Entire Salon Set Up is 100% Mobile</h3>
             <p className="mt-3 text-muted-foreground">
               We bring everything you would expect to see in a salon environment with us, so no matter what you are needing or wanting — we got you covered.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">We've Been Doing This for Years</h3>
             <p className="mt-3 text-muted-foreground">
               Sanna Styles has been the go-to mobile salon in Utah since 2020. At the height of Covid, we launched Sanna Styles and never looked back.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Licensed, Authorized &amp; Insured</h3>
             <p className="mt-3 text-muted-foreground">
               Due to our mobile salon set up, we take extra precautions to ensure the health and safety of everyone involved. Every one of our beauty professionals — Sanna Stylists as we call them — receive weekly guidance and training by Sanna herself.
             </p>
           </article>
 
-          <article className="rounded-2xl border border-border bg-white p-6 shadow-sm">
+          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Beauty is Our Bread and Butter</h3>
             <p className="mt-3 text-muted-foreground">
               Each of our team members brings with them the love and attention to detail that you would expect, to every service. Whatever you need or want to accomplish — Sanna Styles is there to lend a hand.
@@ -94,9 +95,9 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-t-4 border-[#ff2c56] bg-background py-16 md:py-20">
+    <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="overflow-hidden rounded-xl border border-border bg-white p-2 shadow-sm">
+        <div className="overflow-hidden rounded-lg border border-border/70 bg-white/90 p-2">
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/h8MxaoKgq43YIvAZFBGI"
             style={{ width: '100%', height: '3674px', border: 'none', borderRadius: '8px' }}
@@ -119,15 +120,15 @@ const BookLargePartyPage: React.FC = () => {
     </section>
 
     <section
-      className="relative border-t-4 border-[#ff2c56] bg-cover bg-center bg-no-repeat py-16 md:py-20"
+      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
       style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
     >
-      <div className="absolute inset-0 bg-white/35" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Plan Your Event?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Get in touch to discuss pricing, guest count, and event details.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#ff2c56] bg-[#ff2c56] px-8 text-base font-semibold text-white hover:bg-[#ff2c56]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
             <Link to="/contact">Request Event Pricing</Link>
           </Button>
         </div>
