@@ -1,13 +1,13 @@
 import React from 'react';
 
 const AboutPage: React.FC = () => (
-  <div>
+  <div className="mint-framed-media-page">
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">All About <span className="font-display italic">Sanna Styles</span></h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -16,8 +16,14 @@ const AboutPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <div className="container mx-auto space-y-14 px-4 md:space-y-16">
+    <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img
+        src="/images/page/gradient-opt.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+      />
+      <div className="relative z-[1] container mx-auto space-y-14 px-4 md:space-y-16">
         <article>
           <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
@@ -32,7 +38,7 @@ const AboutPage: React.FC = () => (
 
             <div className="mx-auto aspect-square w-full max-w-md self-center overflow-hidden rounded-2xl border border-border shadow-sm">
               <img
-                src="/images/sanna/about/mobile.jpg"
+                src="/images/sanna/about/mobile-opt.webp"
                 alt="Mobile nail service in progress"
                 className="h-full w-full object-cover"
               />
@@ -44,7 +50,7 @@ const AboutPage: React.FC = () => (
           <div className="grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="mx-auto aspect-square w-full max-w-md self-center overflow-hidden rounded-2xl border border-border shadow-sm">
               <img
-                src="/images/sanna/about/sanna.jpg"
+                src="/images/sanna/about/sanna-opt.webp"
                 alt="Nail polish collection"
                 className="h-full w-full object-cover"
               />
@@ -79,7 +85,7 @@ const AboutPage: React.FC = () => (
 
             <div className="mx-auto aspect-square w-full max-w-md self-center overflow-hidden rounded-2xl border border-border shadow-sm">
               <img
-                src="/images/sanna/events/eventmobile.jpg"
+                src="/images/sanna/events/eventmobile-opt.webp"
                 alt="Nail technician with client"
                 className="h-full w-full object-cover"
               />

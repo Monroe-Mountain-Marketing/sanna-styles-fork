@@ -26,7 +26,7 @@ const serviceSliderImages = (() => {
   return selected.map((number) => {
     const imageId = String(number).padStart(3, '0');
     return {
-      src: `/images/sanna/gallery/gallery-${imageId}.jpg`,
+      src: `/images/sanna/gallery/gallery-${imageId}-opt.webp`,
       alt: `Sanna gallery nail image ${number}`,
     };
   });
@@ -111,21 +111,21 @@ const HomePage: React.FC = () => {
     <div>
       <section
         className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+        style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
       >
-        <div className="absolute inset-0 bg-white/70 z-0" aria-hidden="true" />
+        <div className="absolute inset-0 bg-white/60 z-0" aria-hidden="true" />
         <div className="relative z-[1] container mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12 lg:pb-20">
           <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <div className="w-full space-y-8 lg:flex-1">
             <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-6xl">
-              Beautiful Nails, <span className="font-display">Wherever You Are!</span>
+              Beautiful Nails, <span className="font-display text-[#ed3559]">Wherever You Are!</span>
             </h1>
 
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
               Utah's premier mobile nail services that bring the salon experience directly to your home, office, or special event.
             </p>
 
-            <div className="inline-flex max-w-full flex-col items-start gap-2 rounded-3xl border border-border bg-white px-5 py-3 text-base text-foreground md:text-lg sm:flex-row sm:items-center sm:gap-0 sm:rounded-full">
+            <div className="inline-flex max-w-full flex-col items-start gap-2 rounded-3xl double-accent-border bg-white px-5 py-3 text-base text-foreground md:text-lg sm:flex-row sm:items-center sm:gap-0 sm:rounded-full">
               <span>Book our salon services for your upcoming</span>
               <span className="inline-flex items-center gap-1 sm:mx-1">
                 <span className="inline-flex whitespace-nowrap rounded-full bg-primary px-3 py-1 font-semibold text-white shadow-sm">
@@ -137,28 +137,28 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-3 pb-1 sm:flex sm:flex-nowrap">
-              <Button asChild className="w-full border-0 bg-[#f49ca3] text-white hover:bg-[#f49ca3]/90 sm:w-auto">
-                <Link to="/services">
-                  All Services
-                </Link>
+              <Button asChild className="w-full border-0 bg-[#ed3559] text-white hover:bg-[#ed3559]/90 sm:w-auto">
+                <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
+                  Book Now!
+                </a>
               </Button>
 
-              <Button asChild className="w-full border-0 bg-[#f49ca3] text-white hover:bg-[#f49ca3]/90 sm:w-auto">
+              <Button asChild className="w-full border-0 bg-[#ed3559] text-white hover:bg-[#ed3559]/90 sm:w-auto">
                 <Link to="/book-a-large-party-today">
                   Parties & Events
                 </Link>
               </Button>
 
-              <Button asChild variant="outline" className="w-full border-[#bbefe0] text-[#2f6f5f] hover:bg-[#bbefe0]/35 hover:text-[#245649] sm:w-auto">
-                <Link to="/contact">
-                  Contact
+              <Button asChild className="w-full border-0 bg-[#f49ca2] text-white hover:bg-[#f49ca2]/90 sm:w-auto">
+                <Link to="/services">
+                  All Services
                 </Link>
               </Button>
 
-              <Button asChild variant="outline" className="w-full border-[#bbefe0] text-[#2f6f5f] hover:bg-[#bbefe0]/35 hover:text-[#245649] sm:w-auto">
-                <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
-                  Book Now!
-                </a>
+              <Button asChild className="w-full border-0 bg-[#f49ca2] text-white hover:bg-[#f49ca2]/90 sm:w-auto">
+                <Link to="/contact">
+                  Contact
+                </Link>
               </Button>
             </div>
             </div>
@@ -167,7 +167,7 @@ const HomePage: React.FC = () => {
             <div className="relative z-10 mb-2 mt-0 flex w-full max-w-[21rem] shrink-0 self-center sm:max-w-[23rem] md:mb-4 md:max-w-[25rem] lg:order-last lg:ml-auto lg:mr-6 lg:mb-[-140px] lg:mt-[-60px] lg:w-[30rem] lg:max-w-none xl:w-[34rem]">
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="/images/sanna/gallery/gallery-039.jpg"
+                  src="/images/sanna/gallery/gallery-039-opt.webp"
                   alt="Nail salon service"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ transform: 'scaleX(-1)' }}
@@ -181,7 +181,7 @@ const HomePage: React.FC = () => {
 
       <section aria-label="Live Colorfully" className="w-full">
         <img
-          src="/images/stock/live-colorfully.png"
+          src="/images/stock/live-colorfully-opt.webp"
           alt="Colorful nail design showcase"
           className="w-full h-auto"
         />
@@ -200,7 +200,7 @@ const HomePage: React.FC = () => {
             <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
               <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
                 <img
-                  src="/images/sanna/about/sanna-styles.jpg"
+                  src="/images/sanna/about/sanna-styles-opt.webp"
                   alt="Nail service in progress"
                   className="absolute inset-0 h-full w-full object-cover"
                   style={{ transform: 'scaleX(-1)' }}
@@ -210,28 +210,28 @@ const HomePage: React.FC = () => {
 
             <div className="order-3 lg:col-start-2">
               <div className="grid items-start gap-8 md:grid-cols-2">
-                <article className="h-fit self-start rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <article className="h-fit self-start rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <h3 className="text-xl font-semibold text-foreground">More Than a Nail Appointment</h3>
                   <p className="mt-2 text-muted-foreground">
                     Personalized service that feels effortless, polished, and tailored to exactly what you need.
                   </p>
                 </article>
 
-                <article className="h-fit self-start rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <article className="h-fit self-start rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <h3 className="text-xl font-semibold text-foreground">Mobile Convenience</h3>
                   <p className="mt-2 text-muted-foreground">
                     No traffic. No waiting rooms. Just professional nail services brought directly to your door.
                   </p>
                 </article>
 
-                <article className="h-fit self-start rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <article className="h-fit self-start rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <h3 className="text-xl font-semibold text-foreground">Events &amp; Group Bookings</h3>
                   <p className="mt-2 text-muted-foreground">
                     From bridal parties to private events, we create a luxurious experience your guests will love.
                   </p>
                 </article>
 
-                <article className="h-fit self-start rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <article className="h-fit self-start rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <h3 className="text-xl font-semibold text-foreground">Personalized Service</h3>
                   <p className="mt-2 text-muted-foreground">
                     Every appointment is tailored to your preferences, with one-on-one attention and nail designs that reflect your unique style.
@@ -246,13 +246,13 @@ const HomePage: React.FC = () => {
       <section className="bg-muted/40 pt-8 pb-16 md:pt-10 md:pb-20">
         <div
           className="border-y-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-8 md:py-10"
-          style={{ backgroundImage: "url('/branding/large-background.jpg')" }}
+          style={{ backgroundImage: "url('/branding/large-background-opt.webp')" }}
         >
           <div className="container mx-auto px-4">
-            <div className="mx-auto max-w-4xl rounded-3xl border border-border bg-white/85 p-8 md:p-10">
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary">Perfect For</p>
+            <div className="mx-auto max-w-4xl rounded-3xl double-accent-border bg-white/85 p-8 md:p-10">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary">Nails That Come to You</p>
               <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl"><span className="font-display italic">Mobile Nail Services</span> for Every Occasion</h2>
-              <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is perfect for:</p>
+              <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is a great fit for:</p>
 
               <ul className="mt-6 grid list-disc gap-3 pl-6 text-foreground md:grid-cols-2">
                 <li>Busy professionals</li>
@@ -272,7 +272,7 @@ const HomePage: React.FC = () => {
           <div className="w-full py-2">
             <div className="flex flex-col items-center text-center">
               <div className="max-w-2xl">
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Sanna's Services</p>
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary">Sanna Styles Services</p>
                 <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Popular Service Categories</h2>
                 <p className="mt-3 text-lg text-muted-foreground">Choose from our most-booked nail services.</p>
               </div>
@@ -281,19 +281,21 @@ const HomePage: React.FC = () => {
             <ul className="mt-8 flex flex-wrap justify-center gap-3 text-foreground">
               <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Manicures</li>
               <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Pedicures</li>
-              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Gel Nails</li>
-              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Acrylics</li>
-              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Nail Art</li>
-              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Parties &amp; Events</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Lacquer Polish</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Gel Polish</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Builder Gel</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Acrylic</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Custom Nail Art</li>
+              <li className="inline-flex items-center rounded-sm bg-muted/40 px-3 py-1 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">Parties &amp; More!</li>
             </ul>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button asChild className="h-12 px-8 text-base">
+              <Button asChild className="h-12 border-2 border-[#ed3559] bg-[#ed3559] px-8 text-base font-semibold text-white hover:bg-[#ed3559]/90">
                 <Link to="/services">
                   More Services
                 </Link>
               </Button>
-              <Button asChild variant="outline" className="h-12 px-8 text-base">
+              <Button asChild className="h-12 border-2 border-[#f49ca2] bg-[#f49ca2] px-8 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
                 <Link to="/nail-gallery">
                   View Full Gallery
                 </Link>
@@ -336,10 +338,16 @@ const HomePage: React.FC = () => {
       </section>
 
       <section
-        className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20"
+        className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20"
       >
-        <div className="relative container mx-auto px-4">
-          <div className="mx-auto max-w-5xl border-l-2 border-border/60 bg-transparent p-0 pl-5 md:pl-6">
+        <img
+          src="/images/page/gradient-opt.webp"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+        />
+        <div className="relative z-[1] container mx-auto px-4">
+          <div className="mx-auto max-w-5xl double-accent-left bg-transparent p-0 pl-5 md:pl-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">Training &amp; Rentals</p>
             <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Grow Your Nail Business With <span className="font-display italic">Sanna Styles</span></h2>
             <p className="mt-4 text-lg text-muted-foreground">
@@ -362,21 +370,21 @@ const HomePage: React.FC = () => {
           <h2 className="mt-2 text-center text-3xl font-bold text-foreground md:text-4xl">What Clients Are Saying</h2>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
               <p className="text-muted-foreground">
                 "The easiest salon day ever. Sanna came to my home, and my nails lasted beautifully for weeks."
               </p>
               <p className="mt-4 font-semibold text-foreground">- Emily R.</p>
             </article>
 
-            <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
               <p className="text-muted-foreground">
                 "We booked for a bridal party and every guest loved their set. Professional, clean, and so fun."
               </p>
               <p className="mt-4 font-semibold text-foreground">- Marissa T.</p>
             </article>
 
-            <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
               <p className="text-muted-foreground">
                 "Perfect for my schedule. I can finally keep up with nail appointments without leaving the house."
               </p>
@@ -388,7 +396,7 @@ const HomePage: React.FC = () => {
 
       <section
         className="relative bg-cover bg-center bg-no-repeat py-16 md:py-20"
-        style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+        style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
       >
         <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
         <div className="relative container mx-auto px-4 text-center">

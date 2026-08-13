@@ -4,6 +4,7 @@ import PagesLayout from '@/components/layouts/pagesLayout';
 
 import HomePage from '@/pages/Home';
 import AboutPage from '@/pages/About';
+import MeetTheTeamPage from '@/pages/MeetTheTeam';
 import ContactPage from '@/pages/Contact';
 import NailGalleryPage from '@/pages/NailGallery';
 import PoliciesPage from '@/pages/Policies';
@@ -30,6 +31,7 @@ export default function AppRoutes() {
       <Route path="/" element={<PagesLayout />}>  
         <Route index element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="meet-the-team" element={<MeetTheTeamPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="nail-gallery" element={<NailGalleryPage />} />
         <Route path="policies" element={<PoliciesPage />} />

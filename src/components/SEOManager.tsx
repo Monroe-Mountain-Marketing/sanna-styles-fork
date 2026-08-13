@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 const SITE_NAME = 'Sanna Styles Mobile Salon';
 const SITE_BASE_URL = 'https://www.sannastyles.com';
-const DEFAULT_IMAGE = '/images/stock/flower.jpeg';
+const DEFAULT_IMAGE = '/images/stock/flower-opt.webp';
 const CITY_NAME = 'Salt Lake City';
 const STATE_CODE = 'UT';
 const COUNTRY_CODE = 'US';
@@ -31,7 +31,7 @@ const routeSeoMap: Record<string, RouteSeo> = {
     title: 'Mobile Nail Services in Salt Lake City, Utah',
     description:
       'Book luxury mobile nail services with Sanna Styles for appointments, events, and private experiences throughout Salt Lake City and nearby areas.',
-    image: '/images/stock/pink-glitter-nails.jpeg',
+    image: '/images/stock/pink-glitter-nails-opt.webp',
     keywords:
       'mobile nail salon, mobile nails utah, salt lake city nails, nail artist, luxury nail services, private nail appointments',
   },
@@ -39,77 +39,77 @@ const routeSeoMap: Record<string, RouteSeo> = {
     title: 'About Sanna Styles',
     description:
       'Learn the story behind Sanna Styles and our passion for elevated mobile nail experiences, artistry, and client care.',
-    image: '/images/stock/color-swatches.jpeg',
+    image: '/images/stock/color-swatches-opt.webp',
   },
   '/services': {
     title: 'Nail Services',
     description:
       'Explore manicure, pedicure, gel, acrylic, and custom nail art services offered by Sanna Styles.',
-    image: '/images/stock/doing-nails.jpeg',
+    image: '/images/stock/doing-nails-opt.webp',
     serviceType: 'Nail Services',
   },
   '/contact': {
     title: 'Contact Sanna Styles',
     description:
       'Contact Sanna Styles for appointments, party bookings, collaborations, and service questions.',
-    image: '/images/stock/flower.jpeg',
+    image: '/images/stock/flower-opt.webp',
   },
   '/nail-gallery': {
     title: 'Nail Gallery',
     description:
       'Browse the Sanna Styles nail gallery featuring custom designs, event looks, and luxury nail artistry.',
-    image: '/images/sanna/gallery/gallery-091.jpg',
+    image: '/images/sanna/gallery/gallery-091-opt.webp',
   },
   '/book-a-large-party-today': {
     title: 'Book a Large Party',
     description:
       'Plan a large party or event with premium mobile nail services designed for memorable guest experiences.',
-    image: '/images/sanna/events/events1.jpg',
+    image: '/images/sanna/events/events1-opt.webp',
     serviceType: 'Large Party Nail Services',
   },
   '/the-luxe-night-market-by-sanna-styles': {
     title: 'The Luxe Night Market',
     description:
       'Discover The Luxe Night Market by Sanna Styles featuring beauty, creativity, and elevated event experiences.',
-    image: '/images/sanna/events/luxenight.jpg',
+    image: '/images/sanna/events/luxenight-opt.webp',
   },
   '/careers': {
     title: 'Careers at Sanna Styles',
     description:
       'Join Sanna Styles and grow your career in a modern, creative, client-first beauty environment.',
-    image: '/images/sanna/careers/careers.jpg',
+    image: '/images/sanna/careers/careers-opt.webp',
   },
   '/for-nail-technicians': {
     title: 'For Nail Technicians',
     description:
       'Training opportunities and professional resources for nail technicians with Sanna Styles.',
-    image: '/images/sanna/careers/masterclass1.jpg',
+    image: '/images/sanna/careers/masterclass1-opt.webp',
   },
   '/mobile-salon-rent': {
     title: 'Mobile Salon Rent',
     description:
       'Rent a mobile salon setup for premium on-location beauty services and branded experiences.',
-    image: '/images/sanna/events/events5.jpg',
+    image: '/images/sanna/events/events5-opt.webp',
     serviceType: 'Mobile Salon Rental',
   },
   '/blog': {
     title: 'Blog',
     description:
       'Read beauty tips, trends, event inspiration, and updates from Sanna Styles.',
-    image: '/images/stock/single-flower.jpeg',
+    image: '/images/stock/single-flower-opt.webp',
   },
   '/how-to-book': {
     title: 'How to Book',
     description:
       'Learn how to book your Sanna Styles appointment, event, or custom service in a few easy steps.',
-    image: '/images/stock/iridescent.jpeg',
+    image: '/images/stock/iridescent-opt.webp',
     serviceType: 'Beauty Appointment Booking',
   },
   '/service-areas': {
     title: 'Service Areas in Salt Lake City, Utah',
     description:
       'See the Utah cities and neighborhoods where Sanna Styles offers luxury mobile nail appointments and event services.',
-    image: '/images/stock/natural-swatches.jpeg',
+    image: '/images/stock/natural-swatches-opt.webp',
     serviceType: 'Mobile Nail Services Coverage Area',
     keywords:
       'service areas, mobile nails salt lake city, utah mobile nail technician, nail services near me, mobile salon utah',
@@ -118,7 +118,7 @@ const routeSeoMap: Record<string, RouteSeo> = {
     title: 'Policies',
     description:
       'Review Sanna Styles booking, cancellation, and service policies before your appointment.',
-    image: '/images/stock/passion-balloons.jpeg',
+    image: '/images/stock/passion-balloons-opt.webp',
   },
   '/privacy': {
     title: 'Privacy Policy',

@@ -47,9 +47,9 @@ export const Footer = () => {
           <div className="max-w-md justify-self-start md:col-start-1 md:row-start-1 lg:justify-self-center lg:row-span-2">
             <Link to="/" className="inline-flex w-full justify-start lg:justify-center">
               <img
-                src="/branding/pink-stacked.png"
+                src="/branding/pink-stacked-opt.webp"
                 alt="Sanna Styles Mobile Salon"
-                className="h-44 w-auto"
+                className="h-44 w-auto no-image-shadow"
               />
             </Link>
           </div>

@@ -13,109 +13,71 @@ interface ServiceSection {
   id: string;
   title: string;
   bg: string;
+  intro?: React.ReactNode;
   cards: ServiceCard[];
 }
 
 const sections: ServiceSection[] = [
   {
-    id: 'most-popular',
-    title: 'Most Popular',
+    id: 'manicures',
+    title: 'Manicures',
     bg: 'bg-background',
     cards: [
       {
-        name: 'Custom Group or Party Service',
-        price: '',
-        description: <>Not seeing an option that you are needing? Wanting to do a larger party or event? Email <a href="mailto:contact@sannastyles.com" className="text-primary hover:underline font-medium">contact@sannastyles.com</a> with the services you need and want to schedule a time to get pampered!</>,
-        link: { href: '/book-a-large-party-today', label: 'Large Parties & Events' },
-      },
-      {
-        name: 'Mani/Pedi Spa Day For One — Polish',
-        price: 'Starting at $140.00',
-        description: <>Removal of existing polish or gel polish. Lacquer polish for all your nails, natural nail prep, cuticle care, hand lotion massage. Water soak for your feet, callus treatment, exfoliating scrub, foot lotion massage.<br /><br /><span className="italic">Upgrade to Gel for $20 per Mani and Pedi service. Upgrade your nails to an enhancement service for $45–$70. Inquire at booking.</span></>,
+        name: 'Lacquer Manicure',
+        price: 'Starting at $55.00',
+        description: 'Removal of any polish or gel polish. Natural nail prep, application of regular polish on your natural nails, cuticle care, and hand lotion massage.',
       },
       {
         name: 'Gel Manicure',
         price: 'Starting at $75.00',
-        description: 'Removal of any polish or gel polish. Gel polish (shellac) over your natural nails, natural nail prep, cuticle care, hand lotion massage.',
+        description: 'Removal of any polish or gel polish. Gel polish over your natural nails, natural nail prep, cuticle care, and hand lotion massage.',
+      },
+    ],
+  },
+  {
+    id: 'pedicures',
+    title: 'Pedicures',
+    bg: 'bg-muted/40',
+    cards: [
+      {
+        name: 'Lacquer Pedicure',
+        price: 'Starting at $85.00',
+        description: 'Removal of existing polish or gel polish. Natural nail prep, cuticle care, lacquer polish, water soak, callus treatment, exfoliating scrub, and foot lotion massage.',
+      },
+      {
+        name: 'Gel Pedicure',
+        price: 'Starting at $105.00',
+        description: 'Removal of existing polish or gel polish. Natural nail prep, cuticle care, gel polish over your natural nails, water soak, callus treatment, exfoliating scrub, and foot lotion massage.',
+      },
+    ],
+  },
+  {
+    id: 'enhancements',
+    title: 'Enhancements',
+    bg: 'bg-background',
+    intro: 'We offer your choice of Acrylic or Builder Gel to add length and/or strength to your natural nails.',
+    cards: [
+      {
+        name: 'Enhancement Overlay',
+        price: 'Starting at $100.00',
+        description: 'Enhancement service to strengthen natural nails without added length. Includes removal of existing product, nail prep, cuticle care, product application, balancing, and finishing care.',
       },
       {
         name: 'Enhancement Fill',
         price: 'Starting at $100.00',
-        description: <>Looking to fill in that growth with a new fresh look? This service includes removal of old product and any lifting surfaces, nail health inspection and prep, cuticle care, reshaping, and your choice of Acrylic or Buildergel. Includes application of gel polish and ends with a lotion hand massage.<br /><br /><span className="italic">Don't forget to add time for Nail Art!</span></>,
-      },
-    ],
-  },
-  {
-    id: 'manicures',
-    title: 'Manicures',
-    bg: 'bg-muted/40',
-    cards: [
-      {
-        name: 'Lacquer Mani',
-        price: 'Starting at $55.00',
-        description: 'Removal of any polish or gel polish. Natural nail prep, application of regular polish on your natural nail, cuticle care, hand lotion massage. Upgrade to Gel for $20.',
+        description: 'Maintenance service for grown-out enhancements. Includes prep, cuticle care, fill application, balancing, and finishing care.',
       },
       {
-        name: 'Gel Pedicure',
-        price: '$105.00',
-        description: 'Removal of existing polish or gel polish. Natural nail prep, cuticle care, gel polish over your natural nails. Relaxing water soak for your feet, callus treatment, exfoliating scrub, followed by a foot lotion massage.',
-      },
-    ],
-  },
-  {
-    id: 'enhancement-overlays',
-    title: 'Enhancement Overlays',
-    bg: 'bg-background',
-    cards: [
-      {
-        name: 'Acrylic Overlay, No Added Length, Placed on Natural Nails',
-        price: '$100.00',
-        description: 'Enhancement service to strengthen natural nails. Removal of any product, natural nail prep, cuticle care, application of enhancement product, overall balance, Gel polish (shellac) application included, followed by hand lotion massage.',
-      },
-      {
-        name: 'Builder Gel Overlay, No Added Length, Placed on Your Natural Nails',
-        price: 'Starting at $100.00',
-        description: 'Enhancement service to strengthen natural nails. Removal of any product, natural nail prep, cuticle care, application of enhancement product, overall balance, Gel polish (shellac) application included, hand lotion massage.',
-      },
-    ],
-  },
-  {
-    id: 'enhancement-fills',
-    title: 'Enhancement Fills',
-    bg: 'bg-muted/40',
-    cards: [
-      {
-        name: 'Builder Gel Fill',
-        price: 'Starting at $100.00',
-        description: 'Replacement of existing enhancement where there is new growth. Removal of old polish and lifting, natural nail prep for enhancement, cuticle care, application of enhancement, overall balance, Gel polish (shellac) included, and a hand lotion massage.',
-      },
-      {
-        name: 'Acrylic Fill',
-        price: '$100.00',
-        description: 'Replacement of existing enhancement where there is new growth. Removal of old polish and lifting, natural nail prep for enhancement, cuticle care, application of enhancement, overall balance, Gel polish (shellac) included, and a hand lotion massage.',
-      },
-    ],
-  },
-  {
-    id: 'enhancement-fulls',
-    title: 'Enhancement Fulls',
-    bg: 'bg-background',
-    cards: [
-      {
-        name: 'Acrylic Full',
+        name: 'Enhancement Full Set',
         price: 'Starting at $115.00',
-        description: 'Enhancement service to add length to nails. Removal of any product, natural nail prep, cuticle care, forms/tips for desired length, application of enhancement product, overall balance, Gel polish (shellac) application included, hand lotion massage.',
-      },
-      {
-        name: 'Builder Gel Full',
-        price: 'Starting at $115.00',
-        description: 'Enhancement service to add length to nails. Removal of any product, natural nail prep, cuticle care, forms/tips for desired length, application of enhancement product, overall balance, Gel polish (shellac) application included, hand lotion massage.',
+        description: 'Full enhancement set service to add length and strength. Includes complete prep, extension work, product application, balancing, and finishing care.',
       },
     ],
   },
   {
     id: 'spa-day-one',
-    title: 'Spa Day For One',
+    title: 'Spa Day for One',
     bg: 'bg-muted/40',
     cards: [
       {
@@ -132,7 +94,7 @@ const sections: ServiceSection[] = [
   },
   {
     id: 'spa-day-two',
-    title: 'Spa Day For Two',
+    title: 'Spa Day for Two',
     bg: 'bg-background',
     cards: [
       {
@@ -154,7 +116,7 @@ const sections: ServiceSection[] = [
   },
   {
     id: 'spa-day-three',
-    title: 'Spa Day For Three',
+    title: 'Spa Day for Three',
     bg: 'bg-muted/40',
     cards: [
       {
@@ -175,14 +137,15 @@ const sections: ServiceSection[] = [
     ],
   },
   {
-    id: 'spa-day-four',
-    title: 'Spa Day For Four',
+    id: 'party-option',
+    title: '4+ Guests? Book a Party!',
     bg: 'bg-background',
     cards: [
       {
-        name: 'Four Lacquer Mani AND Pedi Spa Day',
-        price: 'Starting at $560.00',
-        description: <>Service includes Four Polish Mani's and Four Polish Pedi's. Each service includes removal of any polish or gel polish. Natural nail prep, cuticle care, application of regular polish on your natural nails, hand and foot lotion massages. Pedicures also include water soak for your feet, callus treatment, and exfoliating scrub.<br /><br /><span className="italic">Upgrade to Gel for $20 per service. Or upgrade your nails to enhancements for $45–$60. Inquire at booking.</span></>,
+        name: 'Custom Group or Party Service',
+        price: '',
+        description: <>Not seeing exactly what you need? Planning a larger party or event? Email <a href="mailto:contact@sannastyles.com" className="text-primary hover:underline font-medium">contact@sannastyles.com</a> with your ideal services and preferred timing, and we will help you build the perfect pampering experience.</>,
+        link: { href: '/book-a-large-party-today', label: 'Large Parties & Events' },
       },
     ],
   },
@@ -230,14 +193,16 @@ const sections: ServiceSection[] = [
   },
 ];
 
+const gradientSectionIds = new Set(['manicures', 'enhancements', 'spa-day-two', 'party-option']);
+
 const ServicesPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Services</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -252,20 +217,45 @@ const ServicesPage: React.FC = () => (
     </section>
 
 
-    {sections.map((section) => (
-      <section key={section.id} id={section.id} className={`${section.bg} border-t-4 border-[#f49ca3] py-14 md:py-16`}>
-        <div className="container mx-auto px-4">
+    {sections.map((section) => {
+      const hasGradient = gradientSectionIds.has(section.id);
+
+      return (
+      <section
+        key={section.id}
+        id={section.id}
+        className={`${section.bg} border-t-4 border-[#f49ca3] py-14 md:py-16 ${hasGradient ? 'relative overflow-hidden' : ''}`}
+      >
+        {hasGradient && (
+          <img
+            src="/images/page/gradient-opt.webp"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+          />
+        )}
+        <div className={`container mx-auto px-4 ${hasGradient ? 'relative z-[1]' : ''}`}>
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">{section.title}</h2>
+          {section.intro && (
+            <p className="mt-3 max-w-3xl text-base text-muted-foreground">{section.intro}</p>
+          )}
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {section.cards.map((card) => (
-              <article key={card.name} className="flex flex-col rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+              <article key={card.name} className="flex flex-col rounded-none double-accent-left bg-transparent p-0 pl-4">
                 <h3 className="text-lg font-semibold text-foreground">{card.name}</h3>
                 {card.price && (
                   <p className="mt-1 text-base font-semibold text-primary">{card.price}</p>
                 )}
                 <p className="mt-3 flex-1 text-sm text-muted-foreground leading-relaxed">{card.description}</p>
                 {card.link && (
-                  <Button asChild className="mt-4 w-fit h-9 border-2 border-[#bbefe0] bg-[#bbefe0] px-5 text-sm font-semibold text-black hover:bg-[#bbefe0]/90">
+                  <Button
+                    asChild
+                    className={
+                      card.link.label === 'Large Parties & Events'
+                        ? 'mt-4 h-9 w-fit border-2 border-[#ed3559] bg-[#ed3559] px-5 text-sm font-semibold text-white hover:bg-[#ed3559]/90'
+                        : 'mt-4 h-9 w-fit border-2 border-[#bbefe0] bg-[#bbefe0] px-5 text-sm font-semibold text-black hover:bg-[#bbefe0]/90'
+                    }
+                  >
                     <Link to={card.link.href}>{card.link.label}</Link>
                   </Button>
                 )}
@@ -279,21 +269,22 @@ const ServicesPage: React.FC = () => (
           </div>
         </div>
       </section>
-    ))}
+    );
+    })}
 
     <section
       className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
     >
       <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Book?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Schedule your mobile nail appointment today.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-12 border-2 border-[#ed3559] bg-[#ed3559] px-8 text-base font-semibold text-white hover:bg-[#ed3559]/90">
             <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
           </Button>
-          <Button asChild className="h-12 border-2 border-black/20 bg-white px-8 text-base font-semibold text-black hover:bg-white/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca2] bg-[#f49ca2] px-8 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>

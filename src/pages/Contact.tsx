@@ -17,10 +17,10 @@ const ContactPage: React.FC = () => {
     <div>
       <section
         className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
       >
-        <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-        <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+        <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
+        <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
         <div className="relative z-[2] container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-black md:text-5xl">Contact Us</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -43,33 +43,33 @@ const ContactPage: React.FC = () => {
               </div>
 
               <div className="space-y-5">
-                <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Phone</p>
                   <a href="tel:+18019233148" className="mt-1 inline-block text-lg text-foreground hover:underline">
                     (801) 923-3148
                   </a>
                 </div>
 
-                <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Email</p>
                   <a href="mailto:contact@sannastyles.com" className="mt-1 inline-block text-lg text-foreground hover:underline">
                     contact@sannastyles.com
                   </a>
                 </div>
 
-                <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Service Area</p>
                   <p className="mt-1 text-lg text-foreground">Salt Lake City, Utah &amp; surrounding areas</p>
                 </div>
 
-                <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Hours</p>
                   <p className="mt-1 text-lg text-foreground">By appointment — flexible scheduling available</p>
                 </div>
 
-                <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+                <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Book Online</p>
-                  <Button asChild className="mt-2 h-10 px-6">
+                  <Button asChild className="mt-2 h-10 border-2 border-[#ed3559] bg-[#ed3559] px-6 text-white hover:bg-[#ed3559]/90">
                     <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
                       Book on Vagaro
                     </a>
@@ -79,7 +79,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Right column — embedded contact form */}
-            <div className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-5">
+            <div className="rounded-none double-accent-left bg-transparent p-0 pl-5">
               <h2 className="mb-0 text-2xl font-bold text-foreground">Send Us a Message</h2>
               <iframe
                 src="https://api.leadconnectorhq.com/widget/form/fsQn3UoGQeT90v9pwKef"

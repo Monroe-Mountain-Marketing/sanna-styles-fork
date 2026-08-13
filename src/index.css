@@ -8,6 +8,92 @@ input {
   color: var(--foreground);
 }
 
+/* Give visible images a consistent soft drop shadow across the site. */
+img:not([aria-hidden="true"]):not(.no-image-shadow) {
+  box-shadow: 0 10px 25px -12px rgb(0 0 0 / 0.35);
+}
+
+/* Framed media should use a single mint border on the frame container. */
+.overflow-hidden.rounded-lg:not(.border):not(.double-accent-border),
+.overflow-hidden.rounded-xl:not(.border):not(.double-accent-border),
+.overflow-hidden.rounded-2xl:not(.border):not(.double-accent-border),
+.overflow-hidden.rounded-3xl:not(.border):not(.double-accent-border) {
+  border: 2px solid var(--border);
+}
+
+.double-accent-left {
+  /* Replace single border with two accent stripes (mint + yellow). */
+  border-left: 0 !important;
+  background-image: linear-gradient(
+    to right,
+    #bbefe0 0 1px,
+    transparent 1px 3px,
+    #e2cf5d 3px 4px,
+    transparent 4px
+  );
+  background-repeat: no-repeat;
+  background-size: 4px 100%;
+  background-position: left top;
+}
+
+.double-accent-bottom {
+  /* Match the two-tone accent treatment for horizontal header borders. */
+  border-bottom: 0 !important;
+  background-image: linear-gradient(#bbefe0, #bbefe0), linear-gradient(#e2cf5d, #e2cf5d);
+  background-repeat: no-repeat;
+  background-size: 100% 1px, 100% 1px;
+  background-position: left calc(100% - 3px), left bottom;
+}
+
+.double-accent-top {
+  /* Match the two-tone accent treatment for top dividers. */
+  border-top: 0 !important;
+  background-image: linear-gradient(#e2cf5d, #e2cf5d), linear-gradient(#bbefe0, #bbefe0);
+  background-repeat: no-repeat;
+  background-size: 100% 1px, 100% 1px;
+  background-position: left 0, left 3px;
+}
+
+.soft-pink-bottom-border {
+  border-bottom: 2px solid #f49ca2 !important;
+}
+
+/* Force mint-framed media styling on selected pages. */
+.mint-framed-media-page img:not([aria-hidden="true"]),
+.mint-framed-media-page video:not([aria-hidden="true"]) {
+  box-shadow: 0 10px 25px -12px rgb(0 0 0 / 0.35);
+}
+
+.mint-framed-media-page .overflow-hidden.rounded-lg,
+.mint-framed-media-page .overflow-hidden.rounded-2xl,
+.mint-framed-media-page .overflow-hidden.rounded-3xl {
+  border: 2px solid var(--border);
+}
+
+.double-accent-border {
+  border: 0 !important;
+  position: relative;
+}
+
+.double-accent-border::before,
+.double-accent-border::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.double-accent-border::before {
+  inset: 0;
+  border: 1px solid #bbefe0;
+  border-radius: inherit;
+}
+
+.double-accent-border::after {
+  inset: 3px;
+  border: 1px solid #e2cf5d;
+  border-radius: inherit;
+}
+
 /* HeroCards background shadow */
 .shadow {
   position: absolute;

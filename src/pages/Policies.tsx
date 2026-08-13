@@ -6,10 +6,10 @@ const PoliciesPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Policies</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -22,7 +22,7 @@ const PoliciesPage: React.FC = () => (
       <div className="container mx-auto space-y-10 px-4">
 
         {/* Refunds */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Refunds</h2>
           <p className="mt-3 text-muted-foreground">
             Sanna Styles exercises a No Refund Policy on all services booked or rendered, classes or education purchased, and any equipment or gear purchased.
@@ -30,7 +30,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Cancellations */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Cancellations</h2>
           <div className="mt-4 space-y-4">
             <div>
@@ -49,7 +49,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* No Shows */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">No Shows / No Showing</h2>
           <div className="mt-4 space-y-6">
             <div>
@@ -80,7 +80,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Pets/animals/children */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Pets / Animals / Children</h2>
           <div className="mt-4 space-y-4">
             <div>
@@ -106,7 +106,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Covid-19 */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Covid-19</h2>
           <p className="mt-3 text-muted-foreground">
             Sanna Styles follows the CDC Utah Health guidelines. The only thing that pampering you comes in second to, is the health and wellbeing of our families and community. We ask the following from every guest:
@@ -118,7 +118,7 @@ const PoliciesPage: React.FC = () => (
         </article>
 
         {/* Privacy & Terms */}
-        <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
           <h2 className="text-2xl font-bold text-foreground">Privacy Policy &amp; Terms of Use</h2>
           <p className="mt-3 text-muted-foreground">
             You may find our Privacy Policy located at{' '}
@@ -139,7 +139,7 @@ const PoliciesPage: React.FC = () => (
 
     <section
       className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
     >
       <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">

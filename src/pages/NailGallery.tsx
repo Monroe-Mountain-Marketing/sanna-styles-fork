@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 type GalleryItem = {
   src: string;
@@ -15,7 +15,7 @@ const galleryItems: GalleryItem[] = Array.from({ length: GALLERY_IMAGE_COUNT }, 
     const imageId = String(number).padStart(3, '0');
 
     return {
-      src: `/images/sanna/gallery/gallery-${imageId}.jpg`,
+      src: `/images/sanna/gallery/gallery-${imageId}-opt.webp`,
       alt: `Sanna Styles gallery image ${number}`,
       tags: ['nails', 'nail art', 'gallery', 'mobile', `set ${number}`],
     };
@@ -25,6 +25,7 @@ const IMAGES_PER_PAGE = 16;
 const NailGalleryPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [activeImage, setActiveImage] = useState<GalleryItem | null>(null);
+  const hasMountedRef = useRef(false);
 
   const filteredItems = useMemo(() => galleryItems, []);
 
@@ -36,14 +37,23 @@ const NailGalleryPage: React.FC = () => {
     return filteredItems.slice(start, start + IMAGES_PER_PAGE);
   }, [filteredItems, safePage]);
 
+  useEffect(() => {
+    if (!hasMountedRef.current) {
+      hasMountedRef.current = true;
+      return;
+    }
+
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [safePage]);
+
   return (
     <div>
       <section
         className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
       >
-        <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-        <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+        <div className="absolute inset-0 bg-white/50" aria-hidden="true" />
+        <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
         <div className="relative z-[2] container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-black md:text-5xl">Nail Gallery</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -55,12 +65,13 @@ const NailGalleryPage: React.FC = () => {
       <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
         <div className="container mx-auto px-4">
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {paginatedItems.map((item) => (
+            {paginatedItems.map((item, index) => (
               <button
                 key={item.src}
                 type="button"
                 onClick={() => setActiveImage(item)}
-                className="group aspect-square overflow-hidden rounded-2xl border border-border text-left"
+                className="group aspect-square overflow-hidden rounded-2xl border-2 text-left"
+                style={{ borderColor: index % 2 === 0 ? '#bbefe0' : '#e2cf5d' }}
               >
                 <img
                   src={item.src}
@@ -82,7 +93,7 @@ const NailGalleryPage: React.FC = () => {
                 type="button"
                 disabled={safePage <= 1}
                 onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))}
-                className="rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-10 rounded-full border-2 border-[#f49ca2] bg-[#f49ca2] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#f49ca2]/90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Previous
               </button>
@@ -91,7 +102,7 @@ const NailGalleryPage: React.FC = () => {
                 type="button"
                 disabled={safePage >= totalPages}
                 onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}
-                className="rounded-md border border-border bg-white px-4 py-2 text-sm font-medium text-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-10 rounded-full border-2 border-[#f49ca2] bg-[#f49ca2] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:bg-[#f49ca2]/90 hover:shadow-lg disabled:cursor-not-allowed disabled:opacity-50"
               >
                 Next
               </button>

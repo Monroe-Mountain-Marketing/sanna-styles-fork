@@ -4,13 +4,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Link } from 'react-router-dom';
 
 const MobileSalonRentPage: React.FC = () => (
-  <div>
+  <div className="mint-framed-media-page">
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Mobile Salon Rentals</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -33,7 +33,7 @@ const MobileSalonRentPage: React.FC = () => (
             <p className="mt-6 text-2xl font-bold text-primary">$300.00</p>
           </div>
           <img
-            src="/images/sanna/events/events5.jpg"
+            src="/images/sanna/events/events5-opt.webp"
             alt="Mobile salon rental setup"
             className="aspect-[4/3] w-full rounded-2xl object-cover"
             loading="lazy"
@@ -99,7 +99,7 @@ const MobileSalonRentPage: React.FC = () => (
 
     <section
       className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
     >
       <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">

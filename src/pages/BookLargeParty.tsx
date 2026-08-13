@@ -18,10 +18,10 @@ const BookLargePartyPage: React.FC = () => {
   <div>
     <section
       className="relative bg-cover bg-top bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Large Parties &amp; Events</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -45,47 +45,53 @@ const BookLargePartyPage: React.FC = () => {
         </div>
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div className="overflow-hidden rounded-2xl">
-            <img src="/images/sanna/events/events1.jpg" alt="Large party event 1" className="aspect-square h-full w-full object-cover" loading="lazy" />
+            <img src="/images/sanna/events/events1-opt.webp" alt="Large party event 1" className="aspect-square h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="overflow-hidden rounded-2xl">
-            <img src="/images/sanna/events/events3.jpg" alt="Large party event 3" className="aspect-square h-full w-full object-cover" loading="lazy" />
+            <img src="/images/sanna/events/events3-opt.webp" alt="Large party event 3" className="aspect-square h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="overflow-hidden rounded-2xl">
-            <img src="/images/sanna/events/events2.jpg" alt="Large party event 2" className="aspect-square h-full w-full object-cover" loading="lazy" />
+            <img src="/images/sanna/events/events2-opt.webp" alt="Large party event 2" className="aspect-square h-full w-full object-cover" loading="lazy" />
           </div>
           <div className="overflow-hidden rounded-2xl">
-            <img src="/images/sanna/events/events4.jpg" alt="Large party event 4" className="aspect-square h-full w-full object-cover" loading="lazy" />
+            <img src="/images/sanna/events/events4-opt.webp" alt="Large party event 4" className="aspect-square h-full w-full object-cover" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section className="bg-muted/40 py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden bg-muted/40 py-16 md:py-20">
+      <img
+        src="/images/page/gradient-opt.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+      />
+      <div className="relative z-[1] container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Why You Should Entrust Your Event to Sanna Styles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
-          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+          <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Our Entire Salon Set Up is 100% Mobile</h3>
             <p className="mt-3 text-muted-foreground">
               We bring everything you would expect to see in a salon environment with us, so no matter what you are needing or wanting — we got you covered.
             </p>
           </article>
 
-          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+          <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">We've Been Doing This for Years</h3>
             <p className="mt-3 text-muted-foreground">
               Sanna Styles has been the go-to mobile salon in Utah since 2020. At the height of Covid, we launched Sanna Styles and never looked back.
             </p>
           </article>
 
-          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+          <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Licensed, Authorized &amp; Insured</h3>
             <p className="mt-3 text-muted-foreground">
               Due to our mobile salon set up, we take extra precautions to ensure the health and safety of everyone involved. Every one of our beauty professionals — Sanna Stylists as we call them — receive weekly guidance and training by Sanna herself.
             </p>
           </article>
 
-          <article className="rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+          <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
             <h3 className="text-xl font-semibold text-foreground">Beauty is Our Bread and Butter</h3>
             <p className="mt-3 text-muted-foreground">
               Each of our team members brings with them the love and attention to detail that you would expect, to every service. Whatever you need or want to accomplish — Sanna Styles is there to lend a hand.
@@ -97,7 +103,13 @@ const BookLargePartyPage: React.FC = () => {
 
     <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="overflow-hidden rounded-lg border border-border/70 bg-white/90 p-2">
+        <div className="mb-8 text-center">
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl">Request a Quote For Your Upcomming Event Today!</h2>
+          <p className="mx-auto mt-3 max-w-3xl text-lg text-muted-foreground">
+            Fill out this quick form and we will be in touch to schedule your upcoming event!
+          </p>
+        </div>
+        <div>
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/h8MxaoKgq43YIvAZFBGI"
             style={{ width: '100%', height: '3674px', border: 'none', borderRadius: '8px' }}
@@ -121,7 +133,7 @@ const BookLargePartyPage: React.FC = () => {
 
     <section
       className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water.png')" }}
+      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
     >
       <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">

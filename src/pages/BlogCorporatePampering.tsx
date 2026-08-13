@@ -6,10 +6,10 @@ const BlogCorporatePamperingPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-20 md:py-28"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/75" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <p className="text-sm font-semibold uppercase tracking-wide text-foreground/70">Sanna Styles Blog</p>
         <h1 className="mx-auto mt-3 max-w-4xl text-4xl font-bold text-black md:text-5xl">
@@ -26,7 +26,7 @@ const BlogCorporatePamperingPage: React.FC = () => (
           </Button>
         </div>
 
-        <div className="mb-8 rounded-none border-l-2 border-border/60 bg-transparent p-0 pl-4">
+        <div className="mb-8 rounded-none double-accent-left bg-transparent p-0 pl-4">
           <a
             href="https://sannastyles.com/book-a-large-party-today/#form"
             className="text-lg font-semibold text-primary underline underline-offset-4"

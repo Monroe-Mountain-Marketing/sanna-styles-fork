@@ -6,10 +6,10 @@ const BlogPage: React.FC = () => (
   <div>
     <section
       className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent.jpeg')" }}
+      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
     >
-      <div className="absolute inset-0 bg-white/70" aria-hidden="true" />
-      <img src="/images/page/wavy-2.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
+      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Blog</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -33,7 +33,7 @@ const BlogPage: React.FC = () => (
         <h2 className="text-3xl font-bold text-foreground">Featured Articles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
-            <img src="/images/blogs/pamper-employees.jpg" alt="Employee appreciation nail service" className="h-48 w-full object-cover" />
+            <img src="/images/blogs/pamper-employees-opt.webp" alt="Employee appreciation nail service" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">
@@ -42,14 +42,14 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 Discover how Sanna Styles brings luxury mobile nail services directly to your office for employee and client appreciation events.
               </p>
-              <Button asChild variant="outline" className="mt-5 w-fit">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
                 <Link to="/blog/corporate-pampering">Read Article</Link>
               </Button>
             </div>
           </article>
 
           <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
-            <img src="/images/blogs/trade-show.jpg" alt="Trade show nail art booth" className="h-48 w-full object-cover" />
+            <img src="/images/blogs/trade-show-opt.webp" alt="Trade show nail art booth" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">
@@ -58,14 +58,14 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 Learn how on-site mini manicures and branded nail art can draw crowds and make your booth unforgettable.
               </p>
-              <Button asChild variant="outline" className="mt-5 w-fit">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
                 <Link to="/blog/trade-show-activation">Read Article</Link>
               </Button>
             </div>
           </article>
 
           <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
-            <img src="/images/blogs/bridal-pampering.jpg" alt="Bridal party pampering" className="h-48 w-full object-cover" />
+            <img src="/images/blogs/bridal-pampering-opt.webp" alt="Bridal party pampering" className="h-48 w-full object-cover" />
             <div className="flex flex-1 flex-col p-6">
               <p className="text-sm text-muted-foreground">July 2026</p>
               <h3 className="mt-2 text-2xl font-semibold text-foreground">
@@ -74,7 +74,7 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 From premium pedicures to custom nail art, discover how Sanna Styles brings a full luxury salon experience to your wedding prep.
               </p>
-              <Button asChild variant="outline" className="mt-5 w-fit">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
                 <Link to="/blog/bridal-pampering">Read Article</Link>
               </Button>
             </div>

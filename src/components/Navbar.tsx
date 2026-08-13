@@ -34,6 +34,7 @@ const megaMenuSections: MegaMenuSection[] = [
     title: "About",
     items: [
       { href: "/about", label: "About Sanna Styles" },
+      { href: "/meet-the-team", label: "Meet the Team" },
       { href: "/contact", label: "Contact Us!" },
       { href: "/nail-gallery", label: "Nail Gallery" },
       { href: "/blog", label: "Blog" },
@@ -73,7 +74,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b bg-white/95 backdrop-blur dark:bg-background/95 dark:border-b-border">
+    <header className="double-accent-bottom sticky top-0 z-40 w-full bg-white/95 backdrop-blur dark:bg-background/95">
       <div className="bg-white">
         <div className="container grid h-20 grid-cols-2 items-center px-4 md:grid-cols-3">
         <div className="hidden items-center gap-2 md:flex">
@@ -105,20 +106,20 @@ export const Navbar = () => {
             className="inline-flex items-center"
           >
             <img
-              src="/branding/pink-horizontal.png"
+              src="/branding/pink-horizontal-opt.webp"
               alt="Sanna Styles Mobile Salon"
-              className="h-12 w-auto md:h-16"
+              className="h-12 w-auto no-image-shadow md:h-16"
             />
           </Link>
         </div>
 
         <div className="hidden items-center justify-end gap-2 md:flex">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild size="sm" className="h-11 border-2 border-[#f49ca2] bg-[#f49ca2] px-4 text-white hover:bg-[#f49ca2]/90">
             <Link to={contactPageHref}>
               Contact Us Today!
             </Link>
           </Button>
-          <Button asChild size="sm">
+          <Button asChild size="sm" className="h-11 border-2 border-[#ed3559] bg-[#ed3559] px-4 text-white hover:bg-[#ed3559]/90">
             <a rel="noreferrer noopener" href={bookNowHref} target="_blank">
               Book Now!
             </a>
@@ -155,12 +156,12 @@ export const Navbar = () => {
                 ))}
 
                 <div className="space-y-2 border-t pt-4">
-                  <Button asChild className="w-full" variant="outline">
+                  <Button asChild className="h-11 w-full border-2 border-[#f49ca2] bg-[#f49ca2] text-white hover:bg-[#f49ca2]/90">
                     <Link to={contactPageHref} onClick={() => setIsOpen(false)}>
                       Contact Us Today!
                     </Link>
                   </Button>
-                  <Button asChild className="w-full">
+                  <Button asChild className="h-11 w-full border-2 border-[#ed3559] bg-[#ed3559] text-white hover:bg-[#ed3559]/90">
                     <a rel="noreferrer noopener" href={bookNowHref} target="_blank" onClick={() => setIsOpen(false)}>
                       Book Now!
                     </a>
@@ -190,12 +191,12 @@ export const Navbar = () => {
       </div>
       </div>
 
-      <NavigationMenu className="mx-auto hidden w-full max-w-none border-t md:flex">
-        <NavigationMenuList className="container h-14 w-screen justify-center gap-2 px-4">
+      <NavigationMenu className="double-accent-top double-accent-bottom soft-pink-bottom-border mx-auto hidden w-full max-w-none bg-white md:flex dark:bg-background">
+        <NavigationMenuList className="container h-16 w-screen justify-center gap-2 px-4">
           <NavigationMenuItem>
             <Link
               to={businessDomain}
-              className={buttonVariants({ variant: "ghost" })}
+              className={cn(buttonVariants({ variant: "ghost" }), "h-11 px-5")}
             >
               Home
             </Link>
@@ -203,7 +204,7 @@ export const Navbar = () => {
 
           {megaMenuSections.map((section) => (
             <NavigationMenuItem key={section.title} className="relative">
-              <NavigationMenuTrigger>{section.title}</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="h-11 px-5">{section.title}</NavigationMenuTrigger>
               <NavigationMenuContent className="md:left-1/2 md:-translate-x-1/2">
                 <div className="w-[300px] rounded-xl border bg-white p-5 shadow-lg">
                   <div key={section.title}>
