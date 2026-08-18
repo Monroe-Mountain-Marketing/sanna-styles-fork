@@ -97,7 +97,6 @@ const AboutPage: React.FC = () => (
           <div className="grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">
             <div className="mx-auto aspect-square w-full max-w-md self-center overflow-hidden rounded-2xl border border-border shadow-sm">
               <video
-                src="/images/sanna/videos/about.MOV"
                 className="h-full w-full object-cover"
                 autoPlay
                 muted
@@ -105,7 +104,10 @@ const AboutPage: React.FC = () => (
                 playsInline
                 preload="metadata"
                 aria-label="Creative beauty vision and future growth"
-              />
+              >
+                <source src="/images/sanna/videos/about.mp4" type="video/mp4" />
+                <source src="/images/sanna/videos/about.MOV" type="video/quicktime" />
+              </video>
             </div>
 
             <div>

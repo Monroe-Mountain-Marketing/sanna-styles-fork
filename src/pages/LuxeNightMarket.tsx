@@ -51,13 +51,9 @@ const LuxeNightMarketPage: React.FC = () => {
             <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
               The Luxe Night Market by Sanna Styles brings together women, entrepreneurs, and small businesses in a vibrant, community-driven marketplace designed for shopping, networking, and empowerment. Whether you're a vendor ready to showcase your brand or an attendee looking for an unforgettable experience, our events are all about connection, creativity, and celebration. Join us and be part of the movement!
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Button asChild className="h-11 border-2 border-[#ed3559] bg-[#ed3559] px-7 text-base font-semibold text-white hover:bg-[#ed3559]/90">
-                <a rel="noreferrer noopener" href="https://sannastyles.com/vendor-registration-form/" target="_blank">Become a Vendor</a>
-              </Button>
-              <Button asChild className="h-11 border-2 border-[#f49ca2] bg-[#f49ca2] px-7 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
-                <a rel="noreferrer noopener" href="https://sannastyles.com/rsvp" target="_blank">R.S.V.P. as a Guest</a>
-              </Button>
+            <div className="mt-6 rounded-2xl border-2 border-[#f49ca3] bg-[#fdf0f1] px-6 py-5">
+              <p className="text-xl font-bold text-[#ed3559]">More Luxe Nights Are Coming</p>
+              <p className="mt-2 text-base text-muted-foreground">Check back soon for upcoming Luxe Night announcements, event details, and what's next from Sanna Styles.</p>
             </div>
           </div>
         </div>
@@ -130,15 +126,11 @@ const LuxeNightMarketPage: React.FC = () => {
           </article>
         </div>
         <p className="mt-8 max-w-3xl text-lg text-muted-foreground">
-          The Luxe Night Market by Sanna Styles is more than just a place to shop — it's a platform for inspiration, connection, and empowerment. Apply to be a vendor or RSVP today and experience the difference.
+          The Luxe Night Market by Sanna Styles is more than just a place to shop — it's a platform for inspiration, connection, and empowerment.
         </p>
-        <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild className="h-11 border-2 border-[#ed3559] bg-[#ed3559] px-7 text-base font-semibold text-white hover:bg-[#ed3559]/90">
-            <a rel="noreferrer noopener" href="https://sannastyles.com/vendor-registration-form/" target="_blank">Apply to Be a Vendor</a>
-          </Button>
-          <Button asChild className="h-11 border-2 border-[#f49ca2] bg-[#f49ca2] px-7 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
-            <a rel="noreferrer noopener" href="https://sannastyles.com/rsvp" target="_blank">R.S.V.P. Today</a>
-          </Button>
+        <div className="mt-6 rounded-2xl border-2 border-[#f49ca3] bg-[#fdf0f1] px-6 py-5">
+          <p className="text-xl font-bold text-[#ed3559]">More Luxe Nights Are Coming</p>
+          <p className="mt-2 text-base text-muted-foreground">Check back soon for upcoming Luxe Night announcements, event details, and what's next from Sanna Styles.</p>
         </div>
       </div>
     </section>

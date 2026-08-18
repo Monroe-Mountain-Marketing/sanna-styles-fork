@@ -49,62 +49,23 @@ const CareersPage: React.FC = () => (
         <h2 className="text-3xl font-bold text-foreground">Open Positions</h2>
 
         <h3 className="mt-8 text-xl font-bold text-foreground">Booth Renting</h3>
-        <ul className="mt-4 space-y-3">
-          <li>
-            <a
-              href="https://sannastyles.com/job-application-sanna-stylist/"
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-lg font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Mobile Nail Technician
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sannastyles.com/job-application-sanna-stylist/"
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-lg font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Mobile Hair Stylist
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sannastyles.com/job-application-sanna-stylist/"
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-lg font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Mobile Massage Therapist
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://sannastyles.com/job-application-sanna-stylist/"
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-lg font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Mobile Makeup Artist
-            </a>
-          </li>
+        <ul className="mt-4 list-disc space-y-2 pl-6">
+          <li className="text-lg text-muted-foreground">Mobile Nail Technician</li>
+          <li className="text-lg text-muted-foreground">Mobile Hair Stylist</li>
+          <li className="text-lg text-muted-foreground">Mobile Massage Therapist</li>
+          <li className="text-lg text-muted-foreground">Mobile Makeup Artist</li>
         </ul>
 
         <h3 className="mt-10 text-xl font-bold text-foreground">Large Events</h3>
-        <ul className="mt-4 space-y-3">
-          <li>
-            <a
-              href="https://sannastyles.com/large-event-technician/"
-              rel="noreferrer noopener"
-              target="_blank"
-              className="text-lg font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              Large Event Nail Technician
-            </a>
-          </li>
+        <ul className="mt-4 list-disc space-y-2 pl-6">
+          <li className="text-lg text-muted-foreground">Large Event Nail Technician</li>
         </ul>
+
+        <div className="mt-8">
+          <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+            <Link to="/contact">Inquire for More Information</Link>
+          </Button>
+        </div>
       </div>
     </section>
 

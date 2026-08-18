@@ -32,12 +32,22 @@ const serviceSliderImages = (() => {
   });
 })();
 
+const JOTFORM_WIDGET_ID = '01a015eed5e8700084fdd4744c07accd8113';
+
 const HomePage: React.FC = () => {
   const [activeOptionIndex, setActiveOptionIndex] = useState(0);
   const [typedText, setTypedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [serviceSlideStart, setServiceSlideStart] = useState(0);
   const [visibleServiceCount, setVisibleServiceCount] = useState(4);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = `https://www.jotform.com/website-widgets/embed/${JOTFORM_WIDGET_ID}`;
+    script.async = true;
+    document.body.appendChild(script);
+    return () => { document.body.removeChild(script); };
+  }, []);
 
   const serviceSlideCount = serviceSliderImages.length;
   const visibleServiceImages = Array.from({ length: visibleServiceCount }, (_, index) => {
@@ -364,32 +374,13 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-b-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <section className="border-b-4 border-[#f49ca3] bg-background pt-16 pb-0 md:pt-20 md:pb-0">
         <div className="container mx-auto px-4">
           <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">Reviews / Testimonials</p>
           <h2 className="mt-2 text-center text-3xl font-bold text-foreground md:text-4xl">What Clients Are Saying</h2>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
-              <p className="text-muted-foreground">
-                "The easiest salon day ever. Sanna came to my home, and my nails lasted beautifully for weeks."
-              </p>
-              <p className="mt-4 font-semibold text-foreground">- Emily R.</p>
-            </article>
-
-            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
-              <p className="text-muted-foreground">
-                "We booked for a bridal party and every guest loved their set. Professional, clean, and so fun."
-              </p>
-              <p className="mt-4 font-semibold text-foreground">- Marissa T.</p>
-            </article>
-
-            <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
-              <p className="text-muted-foreground">
-                "Perfect for my schedule. I can finally keep up with nail appointments without leaving the house."
-              </p>
-              <p className="mt-4 font-semibold text-foreground">- Lauren D.</p>
-            </article>
+          <div className="mt-8">
+            <div id={`JFWebsiteWidget-${JOTFORM_WIDGET_ID}`} />
           </div>
         </div>
       </section>

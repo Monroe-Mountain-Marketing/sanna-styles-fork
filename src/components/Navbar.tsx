@@ -67,8 +67,8 @@ const businessName = "Sanna Styles Mobile Salon";
 const businessDomain = "/";
 const businessEmail = "contact@sannastyles.com";
 const businessPhone = "(801) 923-3148";
-const facebookHref = "/contact";
-const instagramHref = "/contact";
+const facebookHref = "https://www.facebook.com/sannastylessalon";
+const instagramHref = "https://www.instagram.com/sanna_styles_salon";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -78,26 +78,30 @@ export const Navbar = () => {
       <div className="bg-white">
         <div className="container grid h-20 grid-cols-2 items-center px-4 md:grid-cols-3">
         <div className="hidden items-center gap-2 md:flex">
-          <Link
-            to={facebookHref}
+          <a
+            href={facebookHref}
             aria-label="Sanna Styles Facebook"
+            target="_blank"
+            rel="noreferrer noopener"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
               "h-9 w-9"
             )}
           >
             <Facebook className="h-4 w-4" />
-          </Link>
-          <Link
-            to={instagramHref}
+          </a>
+          <a
+            href={instagramHref}
             aria-label="Sanna Styles Instagram"
+            target="_blank"
+            rel="noreferrer noopener"
             className={cn(
               buttonVariants({ variant: "ghost", size: "icon" }),
               "h-9 w-9"
             )}
           >
             <Instagram className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
 
         <div className="flex justify-start md:justify-center">
@@ -176,12 +180,12 @@ export const Navbar = () => {
                     <span>{businessPhone}</span>
                   </p>
                   <div className="mt-2 flex gap-4">
-                    <Link to={facebookHref} className="hover:text-primary">
+                    <a href={facebookHref} target="_blank" rel="noreferrer noopener" className="hover:text-primary">
                       Facebook
-                    </Link>
-                    <Link to={instagramHref} className="hover:text-primary">
+                    </a>
+                    <a href={instagramHref} target="_blank" rel="noreferrer noopener" className="hover:text-primary">
                       Instagram
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
