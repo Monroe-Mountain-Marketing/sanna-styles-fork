@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      /* Save the path and redirect to root so React Router can handle it */
+      sessionStorage.setItem('spa_redirect', location.pathname + location.search);
+      location.replace('/');
+    </script>
+  </head>
+</html>
