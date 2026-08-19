@@ -1,6 +1,6 @@
-name: sanna-styles
+name: sanna-styles-website
 static_sites:
-  - name: web
+  - name: sanna-styles-website
     source_dir: /
     github:
       repo: openskysolutions/react-vite-shadcn
