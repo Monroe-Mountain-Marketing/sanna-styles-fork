@@ -27,6 +27,15 @@
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
     <link rel="alternate" type="application/json" href="/geo.json" title="Geo Profile" />
 
+    <script>
+      /* Restore path saved by route entry documents for SPA routing */
+      var redirect = sessionStorage.getItem('spa_redirect');
+      if (redirect) {
+        sessionStorage.removeItem('spa_redirect');
+        history.replaceState(null, '', redirect);
+      }
+    </script>
+
     <title>Sanna Styles Mobile Salon</title>
     <meta name="title" content="Sanna Styles Mobile Salon" />
     <meta
