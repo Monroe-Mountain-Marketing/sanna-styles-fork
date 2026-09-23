@@ -33,12 +33,9 @@ const travelNotes = [
 
 const ServiceAreasPage: React.FC = () => (
   <div>
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Service Areas</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -47,8 +44,10 @@ const ServiceAreasPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-y-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_cities.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-cities.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Cities We Serve</h2>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
           We come to homes, offices, hotels, and event venues throughout these areas.
@@ -57,7 +56,7 @@ const ServiceAreasPage: React.FC = () => (
           This is just a sample of the areas we serve. Don't see your city? Reach out and we'd be happy to see if we can accommodate your location.
         </p>
         <div className="mt-4">
-          <Button asChild className="h-11 border-2 border-[#f49ca2] bg-[#f49ca2] px-7 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
+          <Button asChild className="h-11 border-2 border-[#f49ca2] bg-white px-7 text-base font-semibold text-black hover:bg-[#f49ca2] hover:text-black">
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>
@@ -74,6 +73,8 @@ const ServiceAreasPage: React.FC = () => (
     </section>
 
     <section className="relative overflow-hidden bg-muted/40 py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_travel.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-travel.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <img
         src="/images/page/gradient-opt.webp"
         alt=""
@@ -94,7 +95,7 @@ const ServiceAreasPage: React.FC = () => (
           <Button asChild className="h-11 px-7 text-base">
             <Link to="/contact">Check My Address</Link>
           </Button>
-          <Button asChild className="h-11 border-2 border-[#ed3559] bg-[#ed3559] px-7 text-base font-semibold text-white hover:bg-[#ed3559]/90">
+          <Button asChild className="h-11 border-2 border-[#ed3559] bg-white px-7 text-base font-semibold text-black hover:bg-[#ed3559] hover:text-black">
             <Link to="/how-to-book">How to Book</Link>
           </Button>
         </div>

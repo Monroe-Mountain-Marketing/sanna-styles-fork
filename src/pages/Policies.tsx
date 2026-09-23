@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 
 const PoliciesPage: React.FC = () => (
   <div>
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Policies</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -18,8 +15,10 @@ const PoliciesPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <div className="container mx-auto space-y-10 px-4">
+    <section className="relative overflow-hidden border-t-4 border-b-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_policy.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-policy.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto space-y-10 px-4">
 
         {/* Refunds */}
         <article className="rounded-none double-accent-left bg-transparent p-0 pl-4">
@@ -137,16 +136,25 @@ const PoliciesPage: React.FC = () => (
       </div>
     </section>
 
-    <section
-      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+    <section className="relative overflow-hidden py-16 md:py-20">
+      <img
+        src="/images/page/sanna_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+      <img
+        src="/images/page/mobile_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Have a Question About Our Policies?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">We're happy to help clarify anything before your appointment.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
             <Link to="/contact">Contact Support</Link>
           </Button>
         </div>

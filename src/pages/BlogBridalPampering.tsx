@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 const BlogBridalPamperingPage: React.FC = () => (
   <div>
     <section
-      className="relative bg-cover bg-center bg-no-repeat py-20 md:py-28"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
+      className="relative py-20 md:py-28"
     >
       <div className="absolute inset-0 bg-white/65" aria-hidden="true" />
       <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />

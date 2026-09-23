@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 
 const BlogPage: React.FC = () => (
   <div>
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Blog</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -28,8 +25,10 @@ const BlogPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_blog.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-blog.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Featured Articles</h2>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           <article className="flex flex-col overflow-hidden rounded-none border-0 bg-transparent">
@@ -42,7 +41,7 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 Discover how Sanna Styles brings luxury mobile nail services directly to your office for employee and client appreciation events.
               </p>
-              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-[#f49ca2] hover:text-black">
                 <Link to="/blog/corporate-pampering">Read Article</Link>
               </Button>
             </div>
@@ -58,7 +57,7 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 Learn how on-site mini manicures and branded nail art can draw crowds and make your booth unforgettable.
               </p>
-              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-[#f49ca2] hover:text-black">
                 <Link to="/blog/trade-show-activation">Read Article</Link>
               </Button>
             </div>
@@ -74,7 +73,7 @@ const BlogPage: React.FC = () => (
               <p className="mt-3 flex-1 text-muted-foreground">
                 From premium pedicures to custom nail art, discover how Sanna Styles brings a full luxury salon experience to your wedding prep.
               </p>
-              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-[#f49ca2] px-4 py-2 text-sm font-semibold text-white hover:bg-[#f49ca2]/90">
+              <Button asChild className="mt-5 h-10 w-fit border-2 border-[#f49ca2] bg-white px-4 py-2 text-sm font-semibold text-black hover:bg-[#f49ca2] hover:text-black">
                 <Link to="/blog/bridal-pampering">Read Article</Link>
               </Button>
             </div>

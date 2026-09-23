@@ -197,19 +197,16 @@ const gradientSectionIds = new Set(['manicures', 'enhancements', 'spa-day-two', 
 
 const ServicesPage: React.FC = () => (
   <div>
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Services</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
           Premium mobile nail services tailored for everyday beauty, celebrations, and on-location events.
         </p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-11 border-2 border-[#f49ca3] bg-white px-7 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
             <Link to="/how-to-book">How to Book?</Link>
           </Button>
         </div>
@@ -224,8 +221,37 @@ const ServicesPage: React.FC = () => (
       <section
         key={section.id}
         id={section.id}
-        className={`${section.bg} border-t-4 border-[#f49ca3] py-14 md:py-16 ${hasGradient ? 'relative overflow-hidden' : ''}`}
+        className={[
+          section.bg,
+          'relative overflow-hidden border-t-4 border-[#f49ca3] py-14 md:py-16',
+          section.id === 'add-ons' ? 'border-b-4' : '',
+          hasGradient ? 'relative overflow-hidden' : '',
+        ].join(' ')}
       >
+        {section.id && (
+          <img src={`/images/page/subpage/${
+            section.id === 'manicures' ? 'sanna_manicures.png' :
+            section.id === 'pedicures' ? 'sanna_pedicures.png' :
+            section.id === 'enhancements' ? 'sanna_enhancements.png' :
+            section.id === 'spa-day-one' ? 'sanna_spa-one.png' :
+            section.id === 'spa-day-two' ? 'sanna_spa-two.png' :
+            section.id === 'spa-day-three' ? 'sanna_spa-three.png' :
+            section.id === 'party-option' ? 'sanna_guests.png' :
+            'sanna_addon.png'
+          }`} alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        )}
+        {section.id && (
+          <img src={`/images/page/subpage/${
+            section.id === 'manicures' ? 'sanna_mobile-manicures.png' :
+            section.id === 'pedicures' ? 'sanna_mobile-pedicures.png' :
+            section.id === 'enhancements' ? 'sanna_mobile-enhancements.png' :
+            section.id === 'spa-day-one' ? 'sanna_mobile-spa-one.png' :
+            section.id === 'spa-day-two' ? 'sanna_mobile-spa-two.png' :
+            section.id === 'spa-day-three' ? 'sanna_mobile-spa-three.png' :
+            section.id === 'party-option' ? 'sanna_mobile-guests.png' :
+            'sanna_mobile-addon.png'
+          }`} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+        )}
         {hasGradient && (
           <img
             src="/images/page/gradient-opt.webp"
@@ -234,7 +260,7 @@ const ServicesPage: React.FC = () => (
             className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
           />
         )}
-        <div className={`container mx-auto px-4 ${hasGradient ? 'relative z-[1]' : ''}`}>
+        <div className={`container mx-auto px-4 ${hasGradient ? 'relative z-[1]' : 'relative z-[1]'}`}>
           <h2 className="text-3xl font-bold text-foreground md:text-4xl">{section.title}</h2>
           {section.intro && (
             <p className="mt-3 max-w-3xl text-base text-muted-foreground">{section.intro}</p>
@@ -252,8 +278,8 @@ const ServicesPage: React.FC = () => (
                     asChild
                     className={
                       card.link.label === 'Large Parties & Events'
-                        ? 'mt-4 h-9 w-fit border-2 border-[#ed3559] bg-[#ed3559] px-5 text-sm font-semibold text-white hover:bg-[#ed3559]/90'
-                        : 'mt-4 h-9 w-fit border-2 border-[#bbefe0] bg-[#bbefe0] px-5 text-sm font-semibold text-black hover:bg-[#bbefe0]/90'
+                        ? 'mt-4 h-9 w-fit border-2 border-[#ed3559] bg-white px-5 text-sm font-semibold text-black hover:bg-[#ed3559] hover:text-black'
+                        : 'mt-4 h-9 w-fit border-2 border-[#bbefe0] bg-white px-5 text-sm font-semibold text-black hover:bg-[#bbefe0] hover:text-black'
                     }
                   >
                     <Link to={card.link.href}>{card.link.label}</Link>
@@ -263,7 +289,7 @@ const ServicesPage: React.FC = () => (
             ))}
           </div>
           <div className="mt-8">
-            <Button asChild className="h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
+            <Button asChild className="h-10 border-2 border-[#f49ca3] bg-white px-6 text-sm font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
               <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
             </Button>
           </div>
@@ -272,19 +298,28 @@ const ServicesPage: React.FC = () => (
     );
     })}
 
-    <section
-      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+    <section className="relative overflow-hidden py-16 md:py-20">
+      <img
+        src="/images/page/sanna_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+      <img
+        src="/images/page/mobile_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Book?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Schedule your mobile nail appointment today.</p>
         <div className="mt-6 flex justify-center gap-3">
-          <Button asChild className="h-12 border-2 border-[#ed3559] bg-[#ed3559] px-8 text-base font-semibold text-white hover:bg-[#ed3559]/90">
+          <Button asChild className="h-12 border-2 border-[#ed3559] bg-white px-8 text-base font-semibold text-black hover:bg-[#ed3559] hover:text-black">
             <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">Book on Vagaro</a>
           </Button>
-          <Button asChild className="h-12 border-2 border-[#f49ca2] bg-[#f49ca2] px-8 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca2] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca2] hover:text-black">
             <Link to="/contact">Contact Us</Link>
           </Button>
         </div>

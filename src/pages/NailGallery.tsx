@@ -48,12 +48,9 @@ const NailGalleryPage: React.FC = () => {
 
   return (
     <div>
-      <section
-        className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-      >
-        <div className="absolute inset-0 bg-white/50" aria-hidden="true" />
-        <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <section className="relative py-24 md:py-32">
+        <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
         <div className="relative z-[2] container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-black md:text-5xl">Nail Gallery</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -62,8 +59,10 @@ const NailGalleryPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
+        <img src="/images/page/subpage/sanna_gallery.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        <img src="/images/page/subpage/sanna_mobile-gallery.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+        <div className="relative z-[1] container mx-auto px-4">
           <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {paginatedItems.map((item, index) => (
               <button

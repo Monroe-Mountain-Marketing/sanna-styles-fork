@@ -4,12 +4,9 @@ import { Link } from 'react-router-dom';
 
 const ForNailTechniciansPage: React.FC = () => (
   <div className="mint-framed-media-page">
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">For <span className="font-display italic">Nail Technicians</span></h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -18,8 +15,10 @@ const ForNailTechniciansPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_tech-cohort.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-tech-cohort.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <article className="py-2">
           <div className="grid items-start gap-6 md:grid-cols-[minmax(240px,360px)_1fr] md:gap-8">
             <img
@@ -37,7 +36,7 @@ const ForNailTechniciansPage: React.FC = () => (
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 We took that class and made it an online learning experience that you can watch at any time. By purchasing this digital access class you will be able to learn from the great Sanna herself on how to become a legal business and operate within Utah and each county you wish to perform services in.
               </p>
-              <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
+              <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-white px-6 text-sm font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
                 <Link to="/contact">Inquire to Enroll</Link>
               </Button>
             </div>
@@ -46,8 +45,10 @@ const ForNailTechniciansPage: React.FC = () => (
       </div>
     </section>
 
-    <section className="bg-muted/40 py-16 md:py-20">
-      <div className="container mx-auto px-4 space-y-14">
+    <section className="relative overflow-hidden border-b-4 border-[#f49ca3] bg-muted/40 py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_nailpreneur.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-nailpreneur.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4 space-y-14">
         {/* Row 1: Nailpreneur Masterclass */}
         <div className="grid items-start gap-6 md:grid-cols-[minmax(240px,360px)_1fr] md:gap-8">
           <img
@@ -67,7 +68,7 @@ const ForNailTechniciansPage: React.FC = () => (
             <p className="mt-3 leading-relaxed text-muted-foreground">
               Whether you are just starting or looking to scale your business, <span className="font-semibold text-foreground">Nailpreneur Masterclass</span> gives you the tools, techniques, and confidence to excel. Don&apos;t just follow trends, set them. Join today and take the first step toward becoming a true <span className="font-semibold text-foreground">Nailpreneur</span>.
             </p>
-            <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-[#f49ca3] px-6 text-sm font-semibold text-white hover:bg-[#f49ca3]/90">
+            <Button asChild className="mt-6 h-10 border-2 border-[#f49ca3] bg-white px-6 text-sm font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
               <Link to="/contact">Inquire to Enroll</Link>
             </Button>
           </div>
@@ -106,19 +107,28 @@ const ForNailTechniciansPage: React.FC = () => (
       </div>
     </section>
 
-    <section
-      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+    <section className="relative overflow-hidden py-16 md:py-20">
+      <img
+        src="/images/page/sanna_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+      <img
+        src="/images/page/mobile_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Grow Your Nail Career?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Explore training, rentals, and career opportunities with Sanna Styles.</p>
-        <div className="mt-6 flex justify-center gap-3">
-          <Button asChild className="h-12 border-2 border-[#ed3559] bg-[#ed3559] px-8 text-base font-semibold text-white hover:bg-[#ed3559]/90">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <Button asChild className="h-12 w-full border-2 border-[#ed3559] bg-white px-8 text-base font-semibold text-black hover:bg-[#ed3559] hover:text-black sm:w-auto">
             <Link to="/mobile-salon-rent">Explore Rental Options</Link>
           </Button>
-          <Button asChild className="h-12 border-2 border-[#f49ca2] bg-[#f49ca2] px-8 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
+          <Button asChild className="h-12 w-full border-2 border-[#f49ca2] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca2] hover:text-black sm:w-auto">
             <Link to="/careers">View Career Opportunities</Link>
           </Button>
         </div>

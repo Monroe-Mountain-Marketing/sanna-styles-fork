@@ -32,7 +32,7 @@ const serviceSliderImages = (() => {
   });
 })();
 
-const JOTFORM_WIDGET_ID = '01a015eed5e8700084fdd4744c07accd8113';
+const JOTFORM_WIDGET_ID = '01a08d1a57c8700084314f01314b421821ec';
 
 const HomePage: React.FC = () => {
   const [activeOptionIndex, setActiveOptionIndex] = useState(0);
@@ -119,16 +119,25 @@ const HomePage: React.FC = () => {
 
   return (
     <div>
-      <section
-        className="relative bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-      >
-        <div className="absolute inset-0 bg-white/60 z-0" aria-hidden="true" />
-        <div className="relative z-[1] container mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12 lg:pb-20">
+      <section className="relative overflow-hidden">
+        <img
+          src="/images/page/sanna_hero.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        />
+        <img
+          src="/images/page/mobile_hero.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
+        <div className="absolute inset-0 bg-white/15 z-0" aria-hidden="true" />
+        <div className="relative z-10 container mx-auto px-4 pt-16 pb-8 md:pt-24 md:pb-12 lg:pb-20">
           <div className="flex flex-col items-center gap-10 lg:flex-row lg:items-stretch lg:gap-16">
           <div className="w-full space-y-8 lg:flex-1">
-            <h1 className="text-4xl font-bold uppercase leading-tight text-primary md:text-6xl">
-              Beautiful Nails, <span className="font-display text-[#ed3559]">Wherever You Are!</span>
+            <h1 className="text-4xl font-bold uppercase leading-tight md:text-6xl">
+              <span className="text-[#ed3559]">Beautiful Nails,</span> <span className="font-display text-black">Wherever You Are!</span>
             </h1>
 
             <p className="max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
@@ -147,25 +156,25 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-3 pb-1 sm:flex sm:flex-nowrap">
-              <Button asChild className="w-full border-0 bg-[#ed3559] text-white hover:bg-[#ed3559]/90 sm:w-auto">
+              <Button asChild className="w-full border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black sm:w-auto">
                 <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
                   Book Now!
                 </a>
               </Button>
 
-              <Button asChild className="w-full border-0 bg-[#ed3559] text-white hover:bg-[#ed3559]/90 sm:w-auto">
+              <Button asChild className="w-full border-2 border-[#ed3559] bg-white text-black hover:bg-[#ed3559] hover:text-black sm:w-auto">
                 <Link to="/book-a-large-party-today">
                   Parties & Events
                 </Link>
               </Button>
 
-              <Button asChild className="w-full border-0 bg-[#f49ca2] text-white hover:bg-[#f49ca2]/90 sm:w-auto">
+              <Button asChild className="w-full border-2 border-[#bbefe0] bg-white text-black hover:bg-[#bbefe0] hover:text-black sm:w-auto">
                 <Link to="/services">
                   All Services
                 </Link>
               </Button>
 
-              <Button asChild className="w-full border-0 bg-[#f49ca2] text-white hover:bg-[#f49ca2]/90 sm:w-auto">
+              <Button asChild className="w-full border-2 border-[#e2cf5d] bg-white text-black hover:bg-[#e2cf5d] hover:text-black sm:w-auto">
                 <Link to="/contact">
                   Contact
                 </Link>
@@ -175,7 +184,7 @@ const HomePage: React.FC = () => {
 
             {/* Rounded square image frame */}
             <div className="relative z-10 mb-2 mt-0 flex w-full max-w-[21rem] shrink-0 self-center sm:max-w-[23rem] md:mb-4 md:max-w-[25rem] lg:order-last lg:ml-auto lg:mr-6 lg:mb-[-140px] lg:mt-[-60px] lg:w-[30rem] lg:max-w-none xl:w-[34rem]">
-              <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-square w-full overflow-hidden rounded-[2rem]">
                 <img
                   src="/images/sanna/gallery/gallery-039-opt.webp"
                   alt="Nail salon service"
@@ -189,26 +198,39 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section aria-label="Live Colorfully" className="w-full">
+      <section aria-label="Live Colorfully" className="relative w-full">
         <img
           src="/images/stock/live-colorfully-opt.webp"
           alt="Colorful nail design showcase"
-          className="w-full h-auto"
+          className="h-auto w-full"
         />
       </section>
 
-      <section className="bg-background pt-16 pb-8 md:pt-20 md:pb-10">
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <img
+          src="/images/page/sanna_sanna-experience.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        />
+        <img
+          src="/images/page/mobile_sanna-experience.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
+        <div className="absolute inset-0 bg-white/15 z-0" aria-hidden="true" />
+        <div className="container relative z-10 mx-auto px-4">
           <div className="grid gap-6 lg:grid-cols-[0.55fr_1.45fr] lg:items-stretch">
             <div className="order-1 mt-3 max-w-3xl text-center lg:order-2 lg:col-start-2 lg:mt-6">
-              <h2 className="text-3xl font-bold text-primary md:text-4xl">The <span className="font-display italic">Sanna Styles</span> Experience</h2>
+              <h2 className="text-3xl font-bold md:text-4xl"><span className="text-black">The</span> <span className="font-display italic text-[#ed3559]">Sanna Styles</span> <span className="text-black">Experience</span></h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Every appointment is designed around your schedule, your location, and your style.
               </p>
             </div>
 
             <div className="relative order-2 mx-auto flex w-full max-w-[17rem] shrink-0 self-center sm:max-w-[19rem] md:max-w-[21rem] lg:order-1 lg:row-span-2 lg:mx-0 lg:w-[24rem] lg:max-w-none lg:self-stretch xl:w-[28rem]">
-              <div className="relative aspect-square w-full overflow-hidden rounded-3xl shadow-2xl">
+              <div className="relative aspect-square w-full overflow-hidden rounded-[2rem]">
                 <img
                   src="/images/sanna/about/sanna-styles-opt.webp"
                   alt="Nail service in progress"
@@ -253,15 +275,25 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-muted/40 pt-8 pb-16 md:pt-10 md:pb-20">
-        <div
-          className="border-y-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-8 md:py-10"
-          style={{ backgroundImage: "url('/branding/large-background-opt.webp')" }}
-        >
-          <div className="container mx-auto px-4">
+      <section className="relative bg-muted/40 pt-8 pb-16 md:pt-10 md:pb-20">
+        <div className="relative overflow-hidden border-y-4 border-[#f49ca3] py-8 md:py-10">
+          <img
+            src="/images/page/sanna_every-occasion.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 hidden h-full w-full object-cover md:block"
+          />
+          <img
+            src="/images/page/mobile_every-occasion.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover md:hidden"
+          />
+          <div className="absolute inset-0 bg-white/15 z-0" aria-hidden="true" />
+          <div className="container relative z-10 mx-auto px-4">
             <div className="mx-auto max-w-4xl rounded-3xl double-accent-border bg-white/85 p-8 md:p-10">
               <p className="text-sm font-semibold uppercase tracking-wider text-primary">Nails That Come to You</p>
-              <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl"><span className="font-display italic">Mobile Nail Services</span> for Every Occasion</h2>
+              <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl"><span className="font-display italic text-[#ed3559]">Mobile Nail Services</span> for Every Occasion</h2>
               <p className="mt-4 text-lg text-muted-foreground">Sanna Styles is a great fit for:</p>
 
               <ul className="mt-6 grid list-disc gap-3 pl-6 text-foreground md:grid-cols-2">
@@ -278,8 +310,21 @@ const HomePage: React.FC = () => {
           </div>
         </div>
 
-        <div className="px-4 pt-10 md:px-8 lg:px-12">
-          <div className="w-full py-2">
+        <div className="relative overflow-hidden px-4 pt-10 md:px-8 lg:px-12">
+          <img
+            src="/images/page/sanna_popular-categories.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 hidden h-full w-full object-cover md:block"
+          />
+          <img
+            src="/images/page/mobile_popular-categories.png"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover md:hidden"
+          />
+          <div className="absolute inset-0 bg-white/15 z-0" aria-hidden="true" />
+          <div className="relative z-10 w-full py-2">
             <div className="flex flex-col items-center text-center">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-wider text-primary">Sanna Styles Services</p>
@@ -300,12 +345,12 @@ const HomePage: React.FC = () => {
             </ul>
 
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button asChild className="h-12 border-2 border-[#ed3559] bg-[#ed3559] px-8 text-base font-semibold text-white hover:bg-[#ed3559]/90">
+              <Button asChild className="h-12 border-2 border-[#ed3559] bg-white px-8 text-base font-semibold text-black hover:bg-[#ed3559] hover:text-black">
                 <Link to="/services">
                   More Services
                 </Link>
               </Button>
-              <Button asChild className="h-12 border-2 border-[#f49ca2] bg-[#f49ca2] px-8 text-base font-semibold text-white hover:bg-[#f49ca2]/90">
+              <Button asChild className="h-12 border-2 border-[#f49ca3] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
                 <Link to="/nail-gallery">
                   View Full Gallery
                 </Link>
@@ -347,19 +392,24 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section
-        className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20"
-      >
+      <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
         <img
-          src="/images/page/gradient-opt.webp"
+          src="/images/page/sanna_grow-business.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
         />
+        <img
+          src="/images/page/mobile_grow-business.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
+        <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
         <div className="relative z-[1] container mx-auto px-4">
           <div className="mx-auto max-w-5xl double-accent-left bg-transparent p-0 pl-5 md:pl-6">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary">Training &amp; Rentals</p>
-            <h2 className="mt-2 text-3xl font-bold text-foreground md:text-4xl">Grow Your Nail Business With <span className="font-display italic">Sanna Styles</span></h2>
+            <h2 className="mt-2 text-3xl font-bold md:text-4xl"><span className="font-display italic text-[#ed3559]">Grow Your Nail Business</span> <span className="text-black">With</span> <span className="text-black">Sanna Styles</span></h2>
             <p className="mt-4 text-lg text-muted-foreground">
               For already licensed nail technicians, explore hands-on trainings, mobile salon rentals, and specialty support designed to expand your skills and services.
             </p>
@@ -374,8 +424,21 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-b-4 border-[#f49ca3] bg-background pt-16 pb-0 md:pt-20 md:pb-0">
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden border-b-4 border-[#f49ca3] pt-16 pb-0 md:pt-20 md:pb-0">
+        <img
+          src="/images/page/sanna_clients-saying.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        />
+        <img
+          src="/images/page/mobile_clients-saying.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
+        <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
+        <div className="container relative z-10 mx-auto px-4">
           <p className="text-center text-sm font-semibold uppercase tracking-wider text-primary">Reviews / Testimonials</p>
           <h2 className="mt-2 text-center text-3xl font-bold text-foreground md:text-4xl">What Clients Are Saying</h2>
 
@@ -385,18 +448,27 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      <section
-        className="relative bg-cover bg-center bg-no-repeat py-16 md:py-20"
-        style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-      >
-        <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+      <section className="relative overflow-hidden py-16 md:py-20">
+        <img
+          src="/images/page/sanna_home-cta.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        />
+        <img
+          src="/images/page/mobile_home-cta.png"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
+        />
+        <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
         <div className="relative container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-black md:text-4xl">Ready for nails without the salon trip?</h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">
             Book your mobile appointment today.
           </p>
           <div className="mt-6 flex justify-center">
-            <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+            <Button asChild className="h-12 border-2 border-[#f49ca3] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
               <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
                 Book Your Appointment
               </a>

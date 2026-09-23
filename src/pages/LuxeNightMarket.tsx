@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -9,26 +9,37 @@ const LUXE_IMAGES = Array.from({ length: 11 }, (_, i) => ({
 }));
 
 const VISIBLE = 3;
+const MOBILE_BREAKPOINT = 768;
 
 const LuxeNightMarketPage: React.FC = () => {
   const [slideStart, setSlideStart] = useState(0);
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < MOBILE_BREAKPOINT : false);
   const total = LUXE_IMAGES.length;
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const prev = () => setSlideStart((s) => (s - 1 + total) % total);
   const next = () => setSlideStart((s) => (s + 1) % total);
+  const visibleCount = isMobile ? 1 : VISIBLE;
 
-  const visible = Array.from({ length: VISIBLE }, (_, i) =>
+  const visible = Array.from({ length: visibleCount }, (_, i) =>
     LUXE_IMAGES[(slideStart + i) % total]
   );
 
   return (
   <div className="mint-framed-media-page">
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">The Luxe Night Market By Sanna Styles</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -37,8 +48,10 @@ const LuxeNightMarketPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-y-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_luxe.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-luxe.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <div className="grid items-center gap-8 md:grid-cols-[minmax(280px,440px)_1fr] md:gap-10">
           <img
             src="/images/sanna/events/luxenight-opt.webp"
@@ -61,6 +74,8 @@ const LuxeNightMarketPage: React.FC = () => {
     </section>
 
     <section className="relative overflow-hidden border-b-4 border-[#f49ca3] bg-background py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_luxe-pics.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-luxe-pics.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <img
         src="/images/page/gradient-opt.webp"
         alt=""
@@ -77,7 +92,7 @@ const LuxeNightMarketPage: React.FC = () => {
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
-          <div className="grid flex-1 grid-cols-3 gap-4">
+          <div className="grid flex-1 grid-cols-1 gap-4 md:grid-cols-3">
             {visible.map((img) => (
               <div key={img.src} className="overflow-hidden rounded-2xl">
                 <img
@@ -101,8 +116,10 @@ const LuxeNightMarketPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="bg-muted/40 py-14 md:py-16">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-b-4 border-[#f49ca3] bg-muted/40 py-14 md:py-16">
+      <img src="/images/page/subpage/sanna_luxe-unique.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-luxe-unique.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <h2 className="text-3xl font-bold text-foreground">Why The Luxe Night Market is Unique</h2>
         <p className="mt-4 max-w-3xl text-lg text-muted-foreground">
           At The Luxe Night Market by Sanna Styles, we create more than just a shopping experience — we build a thriving community of women entrepreneurs, small businesses, and passionate artisans. Our markets are carefully curated to ensure a diverse selection of high-quality vendors while fostering an atmosphere of collaboration, connection, and opportunity.
@@ -135,16 +152,25 @@ const LuxeNightMarketPage: React.FC = () => {
       </div>
     </section>
 
-    <section
-      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+    <section className="relative overflow-hidden py-16 md:py-20">
+      <img
+        src="/images/page/sanna_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+      <img
+        src="/images/page/mobile_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Book the Experience?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">Tell us your date and vibe. We'll bring the luxury to you.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
             <Link to="/contact">Inquire About Availability</Link>
           </Button>
         </div>

@@ -15,12 +15,9 @@ const ContactPage: React.FC = () => {
 
   return (
     <div>
-      <section
-        className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-      >
-        <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-        <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <section className="relative py-24 md:py-32">
+        <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
         <div className="relative z-[2] container mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-black md:text-5xl">Contact Us</h1>
           <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -29,8 +26,10 @@ const ContactPage: React.FC = () => {
         </div>
       </section>
 
-      <section className="border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
-        <div className="container mx-auto px-4">
+      <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
+        <img src="/images/page/subpage/sanna_contact.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+        <img src="/images/page/subpage/sanna_mobile-contact.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+        <div className="relative z-[1] container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2">
 
             {/* Left column — contact info */}
@@ -69,7 +68,7 @@ const ContactPage: React.FC = () => {
 
                 <div className="rounded-none double-accent-left bg-transparent p-0 pl-4">
                   <p className="text-sm font-semibold uppercase tracking-wider text-primary">Book Online</p>
-                  <Button asChild className="mt-2 h-10 border-2 border-[#ed3559] bg-[#ed3559] px-6 text-white hover:bg-[#ed3559]/90">
+                  <Button asChild className="mt-2 h-10 border-2 border-[#ed3559] bg-white px-6 text-black hover:bg-[#ed3559] hover:text-black">
                     <a rel="noreferrer noopener" href="https://www.vagaro.com/sannastyles" target="_blank">
                       Book on Vagaro
                     </a>

@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 const BookLargePartyPage: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' ? window.innerWidth < 768 : false);
+
   useEffect(() => {
     const scriptId = 'gohighlevel-form-embed';
     if (document.getElementById(scriptId)) return;
@@ -12,6 +14,14 @@ const BookLargePartyPage: React.FC = () => {
     script.src = 'https://link.msgsndr.com/js/form_embed.js';
     script.async = true;
     document.body.appendChild(script);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const trustPillars = [
@@ -149,11 +159,10 @@ const BookLargePartyPage: React.FC = () => {
   return (
   <div>
     <section
-      className="relative bg-cover bg-top bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
+      className="relative py-24 md:py-32"
     >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+      <img src="/images/page/subpage/sanna_event-hero.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-event-hero.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="mt-3 text-4xl font-bold text-black md:text-5xl">We bring the nail experience to your event.</h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -163,10 +172,10 @@ const BookLargePartyPage: React.FC = () => {
           Weddings, private celebrations, corporate events, retreats, and hosted gatherings across Utah.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-11 border-2 border-[#ed3559] bg-white px-7 text-base font-semibold text-black hover:bg-[#ed3559] hover:text-black">
             <a href="#form">Request an Event Quote</a>
           </Button>
-          <Button asChild variant="outline" className="h-11 border-2 border-black/20 px-7 text-base font-semibold">
+          <Button asChild variant="outline" className="h-11 border-2 border-[#f49ca3] bg-white px-7 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
             <Link to="/blog/bridal-pampering">Planning a Wedding?</Link>
           </Button>
         </div>
@@ -176,8 +185,10 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_starting.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-starting.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold tracking-[0.18em] text-[#f49ca3]">POLISHED EVENT PRICING</p>
@@ -186,7 +197,7 @@ const BookLargePartyPage: React.FC = () => {
               Pay in full or explore flexible payment options for qualifying individual clients.
             </p>
             <div className="mt-6">
-              <Button asChild className="h-11 border-2 border-[#f49ca3] bg-[#f49ca3] px-7 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+              <Button asChild className="h-11 border-2 border-[#f49ca3] bg-white px-7 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
                 <a href="#event-pricing">View Event Pricing</a>
               </Button>
             </div>
@@ -212,6 +223,8 @@ const BookLargePartyPage: React.FC = () => {
     </section>
 
     <section className="relative overflow-hidden bg-muted/40 py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_planning.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-planning.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <img
         src="/images/page/gradient-opt.webp"
         alt=""
@@ -245,8 +258,10 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-y-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_setup.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-setup.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center">
           <div className="overflow-hidden rounded-3xl border border-[#f49ca3]/35 shadow-md">
             <img
@@ -277,6 +292,8 @@ const BookLargePartyPage: React.FC = () => {
     </section>
 
     <section id="event-pricing" className="relative overflow-hidden bg-muted/40 py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_level.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-level.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <img
         src="/images/page/gradient-opt.webp"
         alt=""
@@ -331,8 +348,10 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_know.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-know.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <p className="text-sm font-semibold tracking-[0.18em] text-[#f49ca3]">OKAY, BUT HOW DOES THIS ACTUALLY WORK?</p>
         <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">The things people usually want to know before booking.</h2>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">
@@ -359,6 +378,8 @@ const BookLargePartyPage: React.FC = () => {
     </section>
 
     <section id="form" className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-muted/40 py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_form.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-form.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <img
         src="/images/page/gradient-opt.webp"
         alt=""
@@ -375,7 +396,7 @@ const BookLargePartyPage: React.FC = () => {
         <div>
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/h8MxaoKgq43YIvAZFBGI"
-            style={{ width: '100%', height: '3674px', border: 'none', borderRadius: '8px' }}
+            style={{ width: '100%', height: isMobile ? '1500px' : '3674px', border: 'none', borderRadius: '8px' }}
             id="inline-h8MxaoKgq43YIvAZFBGI"
             data-layout="{'id':'INLINE'}"
             data-trigger-type="alwaysShow"
@@ -385,7 +406,7 @@ const BookLargePartyPage: React.FC = () => {
             data-deactivation-type="neverDeactivate"
             data-deactivation-value=""
             data-form-name="Large Party Quote"
-            data-height="3674"
+            data-height="1500"
             data-layout-iframe-id="inline-h8MxaoKgq43YIvAZFBGI"
             data-form-id="h8MxaoKgq43YIvAZFBGI"
             title="Large Party Quote"
@@ -397,8 +418,10 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section className="border-t-4 border-[#f49ca3] bg-background py-16 md:py-20">
-      <div className="container mx-auto px-4">
+    <section className="relative overflow-hidden border-t-4 border-b-4 border-[#f49ca3] bg-background py-16 md:py-20">
+      <img src="/images/page/subpage/sanna_looks.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-looks.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
+      <div className="relative z-[1] container mx-auto px-4">
         <p className="text-sm font-semibold tracking-[0.18em] text-[#f49ca3]">REAL SANNA STYLES EXPERIENCES</p>
         <h2 className="mt-3 text-3xl font-bold text-foreground md:text-4xl">This is what mobile looks like.</h2>
         <p className="mt-3 max-w-3xl text-lg text-muted-foreground">Real events. Real setups. Real Sanna Styles experiences.</p>
@@ -416,16 +439,25 @@ const BookLargePartyPage: React.FC = () => {
       </div>
     </section>
 
-    <section
-      className="relative border-t-4 border-[#f49ca3] bg-cover bg-center bg-no-repeat py-16 md:py-20"
-      style={{ backgroundImage: "url('/images/stock/floating-water-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/55" aria-hidden="true" />
+    <section className="relative overflow-hidden py-16 md:py-20">
+      <img
+        src="/images/page/sanna_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+      />
+      <img
+        src="/images/page/mobile_home-cta.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover md:hidden"
+      />
+      <div className="absolute inset-0 bg-white/15" aria-hidden="true" />
       <div className="relative container mx-auto px-4 text-center">
         <h2 className="text-3xl font-bold text-black md:text-4xl">Ready to Plan Your Event?</h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-black/80">One quote. One coordinated nail experience. A lot less running around.</p>
         <div className="mt-6 flex justify-center">
-          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-[#f49ca3] px-8 text-base font-semibold text-white hover:bg-[#f49ca3]/90">
+          <Button asChild className="h-12 border-2 border-[#f49ca3] bg-white px-8 text-base font-semibold text-black hover:bg-[#f49ca3] hover:text-black">
             <a href="#form">Tell Us What You Are Planning</a>
           </Button>
         </div>

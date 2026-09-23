@@ -2,12 +2,9 @@ import React from 'react';
 
 const MeetTheTeamPage: React.FC = () => (
   <div className="mint-framed-media-page">
-    <section
-      className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
-      style={{ backgroundImage: "url('/images/stock/iridescent-opt.webp')" }}
-    >
-      <div className="absolute inset-0 bg-white/60" aria-hidden="true" />
-      <img src="/images/page/wavy-2-opt.webp" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover z-[1] pointer-events-none" />
+    <section className="relative py-24 md:py-32">
+      <img src="/images/page/subpage/sanna_hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-hero-banner.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[2] container mx-auto px-4 text-center">
         <h1 className="text-4xl font-bold text-black md:text-5xl">Meet the <span className="font-display italic">Sanna Styles Team</span></h1>
         <p className="mx-auto mt-4 max-w-3xl text-lg text-foreground/80">
@@ -17,12 +14,8 @@ const MeetTheTeamPage: React.FC = () => (
     </section>
 
     <section className="relative overflow-hidden border-t-4 border-[#f49ca3] bg-background py-14 md:py-16">
-      <img
-        src="/images/page/gradient-opt.webp"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-[0.15]"
-      />
+      <img src="/images/page/subpage/sanna_annika.png" alt="" aria-hidden="true" className="absolute inset-0 hidden h-full w-full object-cover md:block" />
+      <img src="/images/page/subpage/sanna_mobile-annika.png" alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover md:hidden" />
       <div className="relative z-[1] container mx-auto space-y-14 px-4 md:space-y-16">
         <article>
           <div className="grid items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">

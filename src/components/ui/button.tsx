@@ -5,15 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 shadow-md hover:-translate-y-0.5 hover:shadow-lg",
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-bold ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 shadow-md hover:-translate-y-0.5 hover:shadow-lg",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-[#bbefe0]/35 hover:text-[#245649]",
+          "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
+        lightPink:
+          "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
+        hotPink:
+          "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
+        mint:
+          "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
+        yellow:
+          "border-2 border-[#f49ca3] bg-white text-black hover:bg-[#f49ca3] hover:text-black",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
